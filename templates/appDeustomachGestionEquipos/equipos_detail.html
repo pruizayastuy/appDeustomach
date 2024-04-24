@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block contenido %}
+        <h2>Detalle del equipo</h2>
+        {% if equipo %}
+            <ul>
+                <li>{{ equipo.numero_serie }}</li>
+                <li>{{ equipo.modelo }}</li>
+                <li>{{ equipo.marca }}</li>
+                <li>{{ equipo.tipo_equipo }}</li>
+                <li>{{ equipo.fecha_adquisicion }}</li>
+                <li>{{ equipo.fecha_puesta_marcha }}</li>
+                <li>{{ equipo.proveedor_nombre }}</li>
+                <li>{{ equipo.proveedor_telefono }}</li>
+                <li>{{ equipo.planta }}</li>
+            </ul>
+        {% else %}
+            <p>No existe este departamento.</p>
+        {% endif %}
+{% endblock %}
