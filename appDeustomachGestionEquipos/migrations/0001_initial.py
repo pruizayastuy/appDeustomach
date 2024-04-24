@@ -67,7 +67,7 @@ class Migration(migrations.Migration):
                 ('comentarios', models.TextField(blank=True, null=True)),
                 ('created', models.DateTimeField(auto_now_add=True)),
                 ('updated', models.DateTimeField(auto_now=True)),
-                ('empleado_asignado', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='appEmpresaDeustomach.empleados')),
+                ('empleado_asignado', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='appDeustomachGestionEquipos.empleados')),
             ],
             options={
                 'verbose_name': 'ticket',

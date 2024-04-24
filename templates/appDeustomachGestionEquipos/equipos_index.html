@@ -5,12 +5,7 @@
             <ul>
                 {% for equipo in equipos %}
                 	<li>
-                        <a href="{% url 'equipos_show' equipo.id %}">{{ equipo.nombre }}</a>
-                        <a href="{% url 'equipos_update' equipo.id %}">Actualizar</a>
-                        <form method="POST" action="{% url "equipos_delete" equipo.id %}">
-                            {% csrf_token %}
-                            <input type="submit" value="Eliminar">
-                        </form>
+                        <a href="{% url 'equipos_show' equipo.id %}">{{ equipo.numero_serie }}</a>
                     </li>
                 {% endfor %}
             </ul>

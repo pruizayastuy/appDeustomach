@@ -50,7 +50,7 @@ class Ticket(models.Model):
     nivel_urgencia = models.CharField(max_length=50)
     tipo_ticket = models.CharField(max_length=50)
     estado_ticket = models.CharField(max_length=50)
-    empleado_asignado = models.ForeignKey(Empleado.id, on_delete=models.CASCADE)
+    empleado_asignado = models.ForeignKey(Empleado, on_delete=models.CASCADE)
     comentarios = models.TextField(null=True, blank=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)

@@ -1,5 +1,5 @@
 """
-URL configuration for appEmpresaDeustomach project.
+URL configuration for appDeustomachGestionEquipos project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.2/topics/http/urls/
@@ -17,8 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from . import views
-
+from .views import EquipoListView, EquipoDetailView, EquipoCreateView
 
 urlpatterns = [
+    path('/equipos/index', EquipoListView.as_view(), name='equipos_index'),
+    path('equipos/show/<int:pk>/', EquipoDetailView.as_view(), name='equipos_show'),
+    path('/equipos/create', EquipoCreateView.as_view(), name='equipos_create'),
 
 ]
