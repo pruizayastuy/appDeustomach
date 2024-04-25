@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block contenido %}
+        <h2>Detalle del empleado</h2>
+        {% if empleado %}
+            <ul>
+                <li>{{ empleado.dni }}</li>
+                <li>{{ empleado.nombre }}</li>
+                <li>{{ empleado.apellidos }}</li>
+                <li>{{ empleado.email }}</li>
+                <li>{{ empleado.telefono }}</li>
+            </ul>
+        {% else %}
+            <p>No existe este departamento.</p>
+        {% endif %}
+{% endblock %}

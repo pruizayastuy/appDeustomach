@@ -5,7 +5,7 @@
             <ul>
                 {% for equipo in equipos %}
                 	<li>
-                        <a href="{% url 'equipos_show' equipo.id %}">{{ equipo.numero_serie }}</a>
+                        <a href="{% url 'equipos_show' equipo.id %}">{{ equipo.numero_serie }} {{ equipo.modelo }}</a>
                     </li>
                 {% endfor %}
             </ul>
