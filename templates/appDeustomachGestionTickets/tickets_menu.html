@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block contenido %}
+    <h2>Gestión de tickets</h2>
+        <ul>
+            <li><a href="{% url 'tickets_index' %}">Lista de tickets</a></li>
+            <li><a href="{% url 'tickets_create' %}">Crear tickets</a></li>
+        </ul>
+{% endblock %}
