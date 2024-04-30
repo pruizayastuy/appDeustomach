@@ -1,10 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'base.html' %}
+{% block contenido %}
+    <h2>Nuevo ticket</h2>
+    <form action="{% url 'tickets_create' %}" method="post">
+        {% csrf_token %}
+        {{ formulario.errors }}
+        {{ formulario.as_ul }}
+        <input type="submit" value="Nuevo ticket"/>
+    </form>
+
+{% endblock %}

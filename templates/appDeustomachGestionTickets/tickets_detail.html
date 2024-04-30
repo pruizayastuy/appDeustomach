@@ -1,10 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'base.html' %}
+{% block contenido %}
+        <h2>Detalle del ticket</h2>
+        {% if equipo %}
+            <ul>
+                <li>{{ ticket.numero_referencia }}</li>
+                <li>{{ ticket.titulo }}</li>
+                <li>{{ ticket.descripcion_detallada }}</li>
+                <li>{{ ticket.fecha_apertura }}</li>
+                <li>{{ ticket.nivel_urgencia }}</li>
+                <li>{{ ticket.tipo_ticket }}</li>
+                <li>{{ ticket.estado_ticket }}</li>
+                <li>{{ ticket.empleado_asignado }}</li>
+                <li>{{ ticket.comentarios }}</li>
+            </ul>
+        {% else %}
+            <p>No existe este ticket.</p>
+        {% endif %}
+{% endblock %}

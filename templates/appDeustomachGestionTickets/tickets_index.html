@@ -1,10 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'base.html' %}
+{% block contenido %}
+        <h2>Listado de tickets</h2>
+        {% if tickets %}
+            <ul>
+                {% for ticket in tickets %}
+                	<li>
+                        <a href="{% url 'tickets_show' ticket.id %}">{{ ticket.numero_referencia }} {{ ticket.titulo }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No hay tickets creados.</p>
+        {% endif %}
+{% endblock %}

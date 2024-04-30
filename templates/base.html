@@ -11,13 +11,12 @@
 </head>
 <body>
     <div id="content">
-        <h1>Gestor de equipos</h1>
-        <h2>Menu</h2>
+        <h1>Deustomach: Gestión empresarial</h1>
+        <h2>Selección</h2>
         <ul>
-            <li><a href="{% url 'equipos_index' %}">Lista de equipos</a></li>
-            <li><a href="{% url 'equipos_create' %}">Crear equipos</a></li>
-            <li><a href="{% url 'empleados_index' %}">Lista de empleados</a></li>
-            <li><a href="{% url 'empleados_create' %}">Crear empleados</a></li>
+            <li><a href="{% url 'equipos_menu' %}">Gestión de equipos</a></li>
+            <li><a href="{% url 'empleados_menu' %}">Gestión de empleados</a></li>
+            <li><a href="{% url 'tickets_menu' %}">Gestión de tickets</a></li>
         </ul>
         {% block contenido %}{% endblock %}
     </div>
