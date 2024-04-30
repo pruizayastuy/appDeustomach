@@ -3,11 +3,11 @@
         <h2>Detalle del empleado</h2>
         {% if empleado %}
             <ul>
-                <li>{{ empleado.dni }}</li>
-                <li>{{ empleado.nombre }}</li>
-                <li>{{ empleado.apellidos }}</li>
-                <li>{{ empleado.email }}</li>
-                <li>{{ empleado.telefono }}</li>
+                <li>DNI: {{ empleado.dni }}</li>
+                <li>Nombre: {{ empleado.nombre }}</li>
+                <li>Apellidos: {{ empleado.apellidos }}</li>
+                <li>Email: {{ empleado.email }}</li>
+                <li>Teléfono: {{ empleado.telefono }}</li>
             </ul>
         {% else %}
             <p>No existe este empleado.</p>

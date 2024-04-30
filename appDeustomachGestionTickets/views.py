@@ -17,10 +17,16 @@ class TicketListView(ListView):
 
 class TicketDetailView(DetailView):
     model = Ticket
+    template_name = 'appDeustomachGestionTickets/tickets_detail.html'
+    context_object_name = 'ticket'
 
-    def get_queryset(self):
-        ticket = get_object_or_404(Ticket, id=self.kwargs['pk'])
-        return Empleado.objects.filter(ticket=ticket)
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        ticket = self.get_object()
+        empleado_asignado = ticket.empleado_asignado
+        if empleado_asignado:
+            context['empleado_asignado'] = empleado_asignado
+        return context
 
 
 class TicketCreateView(View):

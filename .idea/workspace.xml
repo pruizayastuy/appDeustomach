@@ -1,46 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="27942a8f-6c58-40fe-bb53-c63c5c474aac" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    <list default="true" id="27942a8f-6c58-40fe-bb53-c63c5c474aac" name="Changes" comment="Actualización de requirements.txt y README.md">
+      <change beforePath="$PROJECT_DIR$/.idea/appDeustomach.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/appDeustomach.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/appDeustomach/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/appDeustomach/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appDeustomach/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/appDeustomach/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appDeustomachGestionEmpleados/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/appDeustomachGestionEmpleados/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appDeustomachGestionEmpleados/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/appDeustomachGestionEmpleados/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appDeustomachGestionEmpleados/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/appDeustomachGestionEmpleados/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appDeustomachGestionEmpleados/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/appDeustomachGestionEmpleados/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appDeustomachGestionEmpleados/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/appDeustomachGestionEmpleados/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appDeustomachGestionEmpleados/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/appDeustomachGestionEmpleados/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appDeustomachGestionEmpleados/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/appDeustomachGestionEmpleados/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appDeustomachGestionEquipos/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/appDeustomachGestionEquipos/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appDeustomachGestionEquipos/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/appDeustomachGestionEquipos/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appDeustomachGestionEquipos/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/appDeustomachGestionEquipos/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appDeustomachGestionEquipos/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/appDeustomachGestionEquipos/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appDeustomachGestionEquipos/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/appDeustomachGestionEquipos/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appDeustomachGestionEquipos/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/appDeustomachGestionEquipos/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appDeustomachGestionEquipos/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/appDeustomachGestionEquipos/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appDeustomachGestionTickets/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/appDeustomachGestionTickets/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appDeustomachGestionTickets/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/appDeustomachGestionTickets/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appDeustomachGestionTickets/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/appDeustomachGestionTickets/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appDeustomachGestionTickets/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/appDeustomachGestionTickets/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appDeustomachGestionTickets/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/appDeustomachGestionTickets/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appDeustomachGestionTickets/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/appDeustomachGestionTickets/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/appDeustomachGestionTickets/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/appDeustomachGestionTickets/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/appDeustomachGestionEmpleados/empleados_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/appDeustomachGestionEmpleados/empleados_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/appDeustomachGestionEmpleados/empleados_menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/appDeustomachGestionEmpleados/empleados_menu.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/appDeustomachGestionEquipos/equipos_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/appDeustomachGestionEquipos/equipos_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/appDeustomachGestionEquipos/equipos_menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/appDeustomachGestionEquipos/equipos_menu.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/appDeustomachGestionTickets/tickets_create.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/appDeustomachGestionTickets/tickets_create.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/appDeustomachGestionTickets/tickets_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/appDeustomachGestionTickets/tickets_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/appDeustomachGestionTickets/tickets_index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/appDeustomachGestionTickets/tickets_index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -61,8 +41,14 @@
     "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.pycharm.django.structure.promotion.once.per.project": "true",
+    "django.template.preview.state": "SHOW_EDITOR",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/Deusto/workspaceDjango/proyectos/appDeustomach",
+    "last_opened_file_path": "C:/Users/Deusto/workspaceDjango/proyectos/empresa_django",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
@@ -110,10 +96,24 @@
       <updated>1713892765551</updated>
       <workItem from="1713892766683" duration="28000" />
       <workItem from="1714487684182" duration="10000" />
+      <workItem from="1714487702480" duration="3616000" />
     </task>
+    <task id="LOCAL-00001" summary="Actualización de requirements.txt y README.md">
+      <option name="closed" value="true" />
+      <created>1714487779905</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1714487779905</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Actualización de requirements.txt y README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="Actualización de requirements.txt y README.md" />
   </component>
 </project>

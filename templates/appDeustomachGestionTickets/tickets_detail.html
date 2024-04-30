@@ -1,19 +1,25 @@
 {% extends 'base.html' %}
 {% block contenido %}
-        <h2>Detalle del ticket</h2>
-        {% if equipo %}
-            <ul>
-                <li>{{ ticket.numero_referencia }}</li>
-                <li>{{ ticket.titulo }}</li>
-                <li>{{ ticket.descripcion_detallada }}</li>
-                <li>{{ ticket.fecha_apertura }}</li>
-                <li>{{ ticket.nivel_urgencia }}</li>
-                <li>{{ ticket.tipo_ticket }}</li>
-                <li>{{ ticket.estado_ticket }}</li>
-                <li>{{ ticket.empleado_asignado }}</li>
-                <li>{{ ticket.comentarios }}</li>
-            </ul>
-        {% else %}
-            <p>No existe este ticket.</p>
-        {% endif %}
+    <h2>Detalle del ticket</h2>
+    {% if ticket %}
+        <ul>
+            <li>Número de referencia: {{ ticket.numero_referencia }}</li>
+            <li>Título: {{ ticket.titulo }}</li>
+            <li>Descripción detallada: {{ ticket.descripcion_detallada }}</li>
+            <li>Fecha de apertura: {{ ticket.fecha_apertura }}</li>
+            <li>Nivel de urgencia: {{ ticket.nivel_urgencia }}</li>
+            <li>Tipo de ticket: {{ ticket.tipo_ticket }}</li>
+            <li>Estado del ticket: {{ ticket.estado_ticket }}</li>
+            {% if ticket.empleado_asignado %}
+                <li>Empleado Asignado:</li>
+                <ul>
+                    <li>Nombre: {{ ticket.empleado_asignado.nombre }}</li>
+                    <li>DNI: {{ ticket.empleado_asignado.dni }}</li>
+                </ul>
+            {% endif %}
+            <li>Comentarios: {{ ticket.comentarios }}</li>
+        </ul>
+    {% else %}
+        <p>No existe este ticket.</p>
+    {% endif %}
 {% endblock %}

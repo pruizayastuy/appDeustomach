@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'appDeustomachGestionEquipos',
     'appDeustomachGestionEmpleados',
-    'appDeustomachGestionTickets'
+    'appDeustomachGestionTickets',
 ]
 
 MIDDLEWARE = [

@@ -3,15 +3,15 @@
         <h2>Detalle del equipo</h2>
         {% if equipo %}
             <ul>
-                <li>{{ equipo.numero_serie }}</li>
-                <li>{{ equipo.modelo }}</li>
-                <li>{{ equipo.marca }}</li>
-                <li>{{ equipo.tipo_equipo }}</li>
-                <li>{{ equipo.fecha_adquisicion }}</li>
-                <li>{{ equipo.fecha_puesta_marcha }}</li>
-                <li>{{ equipo.proveedor_nombre }}</li>
-                <li>{{ equipo.proveedor_telefono }}</li>
-                <li>{{ equipo.planta }}</li>
+                <li>Número de serie: {{ equipo.numero_serie }}</li>
+                <li>Modelo: {{ equipo.modelo }}</li>
+                <li>Marca: {{ equipo.marca }}</li>
+                <li>Tipo de equipo: {{ equipo.tipo_equipo }}</li>
+                <li>Fecha de adquisición: {{ equipo.fecha_adquisicion }}</li>
+                <li>Fecha de puesta en marcha: {{ equipo.fecha_puesta_marcha }}</li>
+                <li>Nombre del proveedor: {{ equipo.proveedor_nombre }}</li>
+                <li>Teléfono del proveedor: {{ equipo.proveedor_telefono }}</li>
+                <li>Planta del equipo: {{ equipo.planta }}</li>
             </ul>
         {% else %}
             <p>No existe este equipo.</p>
