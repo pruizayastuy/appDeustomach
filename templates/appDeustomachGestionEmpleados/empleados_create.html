@@ -1,11 +1,24 @@
 {% extends 'base.html' %}
 {% block contenido %}
-    <h2>Nuevo empleado</h2>
-    <form action="{% url 'empleados_create' %}" method="post">
-        {% csrf_token %}
-        {{ formulario.errors }}
-        {{ formulario.as_ul }}
-        <input type="submit" value="Nuevo empleado"/>
-    </form>
-
+    <main class="empleados-create">
+        <h2>Nuevo empleado</h2>
+        <form class="empleado-form" action="{% url 'empleados_create' %}" method="post">
+            {% csrf_token %}
+            <div class="form-errors">
+                {{ formulario.errors }}
+            </div>
+            <div class="form-fields">
+                <div class="grid-container">
+                    {% for field in formulario %}
+                        <div class="grid-item">
+                            {{ field.label_tag }}
+                            <br>
+                            {{ field }}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <input type="submit" value="Nuevo empleado" class="input-submit" />
+        </form>
+    </main>
 {% endblock %}

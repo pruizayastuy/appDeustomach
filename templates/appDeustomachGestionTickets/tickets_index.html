@@ -1,15 +1,20 @@
 {% extends 'base.html' %}
 {% block contenido %}
+    <main class="tickets-index">
+        <link rel="stylesheet" href="../../static/css/style.css">
         <h2>Listado de tickets</h2>
-        {% if tickets %}
-            <ul>
+        <div class="tickets-grid">
+            {% if tickets %}
                 {% for ticket in tickets %}
-                	<li>
-                        <a href="{% url 'tickets_show' ticket.id %}">{{ ticket.numero_referencia }} {{ ticket.titulo }}</a>
-                    </li>
+                    <div class="box-tickets-item">
+                        <a href="{% url 'tickets_show' ticket.id %}">
+                            {{ ticket.numero_referencia }} {{ ticket.titulo }}
+                        </a>
+                    </div>
                 {% endfor %}
-            </ul>
-        {% else %}
+            {% else %}
             <p>No hay tickets creados.</p>
         {% endif %}
+        </div>
+    </main>
 {% endblock %}

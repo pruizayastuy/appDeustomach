@@ -1,8 +1,14 @@
 {% extends 'base.html' %}
 {% block contenido %}
+    <main class="empleados-menu">
     <h2>Gestión de empleados</h2>
-        <ul>
-            <li><a href="{% url 'empleados_index' %}">Lista de empleados</a></li>
-            <li><a href="{% url 'empleados_create' %}">Crear empleados</a></li>
-        </ul>
+        <section class="gestion-tickets">
+            <div class="box-empleados-index">
+                <a href="{% url 'empleados_index' %}">Lista de empleados</a>
+            </div>
+            <div class="box-empleados-create">
+                <a href="{% url 'empleados_create' %}">Crear empleados</a>
+            </div>
+        </section>
+    </main>
 {% endblock %}

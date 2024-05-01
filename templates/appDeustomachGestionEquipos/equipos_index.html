@@ -1,15 +1,20 @@
 {% extends 'base.html' %}
 {% block contenido %}
+    <main class="equipos-index">
+        <link rel="stylesheet" href="../../static/css/style.css">
         <h2>Listado de equipos</h2>
-        {% if equipos %}
-            <ul>
+        <div class="equipos-grid">
+            {% if equipos %}
                 {% for equipo in equipos %}
-                	<li>
-                        <a href="{% url 'equipos_show' equipo.id %}">{{ equipo.numero_serie }} {{ equipo.modelo }}</a>
-                    </li>
+                    <div class="box-equipos-item">
+                        <a href="{% url 'equipos_show' equipo.id %}">
+                            {{ equipo.numero_serie }} {{ equipo.modelo }}
+                        </a>
+                    </div>
                 {% endfor %}
-            </ul>
-        {% else %}
-            <p>No hay equipos creados.</p>
-        {% endif %}
+            {% else %}
+                <p>No hay equipos creados.</p>
+            {% endif %}
+        </div>
+    </main>
 {% endblock %}

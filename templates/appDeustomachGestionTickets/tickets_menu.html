@@ -1,8 +1,17 @@
 {% extends 'base.html' %}
 {% block contenido %}
-    <h2>Gestión de tickets</h2>
-        <ul>
-            <li><a href="{% url 'tickets_index' %}">Lista de tickets</a></li>
-            <li><a href="{% url 'tickets_create' %}">Crear tickets</a></li>
-        </ul>
+    <main class="tickets-menu">
+        <h2>Gestión de tickets</h2>
+        <section class="gestion-tickets">
+            <div class="box-tickets-index">
+                <a href="{% url 'tickets_index' %}">Lista de tickets</a>
+            </div>
+            <div class="box-tickets-create">
+                <a href="{% url 'tickets_create' %}">Crear tickets</a>
+            </div>
+            <div class="box-tickets-update">
+                <a href="{% url 'tickets_update' %}">Actualizar tickets</a>
+            </div>
+        </section>
+    </main>
 {% endblock %}

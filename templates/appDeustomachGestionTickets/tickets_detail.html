@@ -1,25 +1,33 @@
 {% extends 'base.html' %}
 {% block contenido %}
-    <h2>Detalle del ticket</h2>
-    {% if ticket %}
-        <ul>
-            <li>Número de referencia: {{ ticket.numero_referencia }}</li>
-            <li>Título: {{ ticket.titulo }}</li>
-            <li>Descripción detallada: {{ ticket.descripcion_detallada }}</li>
-            <li>Fecha de apertura: {{ ticket.fecha_apertura }}</li>
-            <li>Nivel de urgencia: {{ ticket.nivel_urgencia }}</li>
-            <li>Tipo de ticket: {{ ticket.tipo_ticket }}</li>
-            <li>Estado del ticket: {{ ticket.estado_ticket }}</li>
-            {% if ticket.empleado_asignado %}
-                <li>Empleado Asignado:</li>
-                <ul>
-                    <li>Nombre: {{ ticket.empleado_asignado.nombre }}</li>
-                    <li>DNI: {{ ticket.empleado_asignado.dni }}</li>
-                </ul>
+    <main class="tickets-detail">
+        <h2>Detalle del ticket</h2>
+        <div class="box-tickets-detail">
+            {% if ticket %}
+                <a class="ticket-label">Número de referencia</a>
+                <a class="ticket-content">{{ ticket.numero_referencia }}</a>
+                <a class="ticket-label">Título</a>
+                <a class="ticket-content">{{ ticket.titulo }}</a>
+                <a class="ticket-label">Descripción detallada</a>
+                <a class="ticket-content">{{ ticket.descripcion_detallada }}</a>
+                <a class="ticket-label">Fecha de apertura</a>
+                <a class="ticket-content">{{ ticket.fecha_apertura }}</a>
+                <a class="ticket-label">Nivel de urgencia</a>
+                <a class="ticket-content">{{ ticket.nivel_urgencia }}</a>
+                <a class="ticket-label">Tipo de ticket</a>
+                <a class="ticket-content">{{ ticket.tipo_ticket }}</a>
+                <a class="ticket-label">Estado del ticket</a>
+                <a class="ticket-content-2">{{ ticket.estado_ticket }}</a>
+                {% if ticket.empleado_asignado %}
+                    <a class="ticket-label-2">Empleado Asignado</a>
+                    <a class="ticket-label-3">Nombre</a>
+                    <a class="ticket-content-3">{{ ticket.empleado_asignado.nombre }}</a>
+                    <a class="ticket-label-4">DNI</a>
+                    <a class="ticket-content-4">{{ ticket.empleado_asignado.dni }}</a>
+                {% endif %}
+            {% else %}
+                <p>No existe este ticket.</p>
             {% endif %}
-            <li>Comentarios: {{ ticket.comentarios }}</li>
-        </ul>
-    {% else %}
-        <p>No existe este ticket.</p>
-    {% endif %}
+        </div>
+    </main>
 {% endblock %}
