@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block contenido %}
+    <main class="tickets-update">
+        <h2>Actualizar tickets</h2>
+        <a>Selecciona el ID del ticket que deseas editar</a>
+        <form class="ticket-form" method="post">
+            {% csrf_token %}
+            <div class="form-fields">
+                <div class="form-group">
+                    <label for="ticket_id">Ticket:</label>
+                    <select name="ticket_id" id="ticket_id">
+                        {% for ticket in tickets %}
+                            <option value="{{ ticket.pk }}">{{ ticket.pk }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form-grid">
+                    {{ formulario.as_ul }}
+                </div>
+            </div>
+            <input type="submit" value="Actualizar ticket"/>
+        </form>
+    </main>
+{% endblock %}

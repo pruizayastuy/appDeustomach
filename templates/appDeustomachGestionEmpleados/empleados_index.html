@@ -1,16 +1,20 @@
-
 {% extends 'base.html' %}
 {% block contenido %}
-    <h2>Listado de Empleados</h2>
-    {% if empleados %}
-        <ul>
-            {% for empleado in empleados %}
-                <li>
-                    <a href="{% url 'empleados_show' empleado.pk %}">{{ empleado.dni}} {{ empleado.nombre }}</a>
-                </li>
-            {% endfor %}
-        </ul>
-    {% else %}
-        <p>No hay empleados creados.</p>
-    {% endif %}
+    <main class="empleados-index">
+    <link rel="stylesheet" href="../../static/css/style.css">
+        <h2>Listado de empleados</h2>
+        <div class="empleados-grid">
+            {% if empleados %}
+                {% for empleado in empleados %}
+                    <div class="box-empleados-item">
+                        <a href="{% url 'empleados_show' empleado.pk %}">
+                            {{ empleado.dni }} {{ empleado.nombre }}
+                        </a>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>No hay empleados creados.</p>
+            {% endif %}
+        </div>
+    </main>
 {% endblock %}

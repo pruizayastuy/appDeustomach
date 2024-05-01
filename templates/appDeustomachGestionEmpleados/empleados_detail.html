@@ -1,15 +1,22 @@
 {% extends 'base.html' %}
 {% block contenido %}
+    <main class="empleados-detail">
         <h2>Detalle del empleado</h2>
-        {% if empleado %}
-            <ul>
-                <li>DNI: {{ empleado.dni }}</li>
-                <li>Nombre: {{ empleado.nombre }}</li>
-                <li>Apellidos: {{ empleado.apellidos }}</li>
-                <li>Email: {{ empleado.email }}</li>
-                <li>Teléfono: {{ empleado.telefono }}</li>
-            </ul>
-        {% else %}
-            <p>No existe este empleado.</p>
-        {% endif %}
+        <div class="box-empleados-detail">
+            {% if empleado %}
+                <a class="empleado-label">DNI</a>
+                <a class="empleado-content">{{ empleado.dni }}</a>
+                <a class="empleado-label">Nombre</a>
+                <a class="empleado-content">{{ empleado.nombre }}</a>
+                <a class="empleado-label">Apellidos</a>
+                <a class="empleado-content">{{ empleado.apellidos }}</a>
+                <a class="empleado-label">Email</a>
+                <a class="empleado-content">{{ empleado.email }}</a>
+                <a class="empleado-label">Teléfono</a>
+                <a class="empleado-content">{{ empleado.telefono }}</a>
+            {% else %}
+                <p>No existe este empleado.</p>
+            {% endif %}
+        </div>
+    </main>
 {% endblock %}

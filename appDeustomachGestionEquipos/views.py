@@ -1,4 +1,7 @@
+from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404, redirect
+from django.urls import reverse
+
 from appDeustomachGestionEquipos.models import Equipo
 from appDeustomachGestionEquipos.forms import EquipoForm
 from django.views.generic import ListView, DetailView, View
@@ -33,3 +36,15 @@ class EquipoCreateView(View):
             formulario.save()
             return redirect('equipos_index')
         return render(request, 'appDeustomachGestionEquipos/equipos_create.html', {'formulario': formulario})
+
+
+class EquipoDeleteView(View):
+    def get(self, request):
+        equipos = Equipo.objects.all()
+        return render(request, 'appDeustomachGestionEquipos/equipos_delete.html', {'equipos': equipos})
+
+    def post(self, request):
+        equipo_id = request.POST.get('equipo_id')
+        equipo = get_object_or_404(Equipo, pk=equipo_id)
+        equipo.delete()
+        return redirect('equipos_index')

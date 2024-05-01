@@ -1,19 +1,30 @@
 {% extends 'base.html' %}
 {% block contenido %}
+    <main class="equipos-detail">
         <h2>Detalle del equipo</h2>
-        {% if equipo %}
-            <ul>
-                <li>Número de serie: {{ equipo.numero_serie }}</li>
-                <li>Modelo: {{ equipo.modelo }}</li>
-                <li>Marca: {{ equipo.marca }}</li>
-                <li>Tipo de equipo: {{ equipo.tipo_equipo }}</li>
-                <li>Fecha de adquisición: {{ equipo.fecha_adquisicion }}</li>
-                <li>Fecha de puesta en marcha: {{ equipo.fecha_puesta_marcha }}</li>
-                <li>Nombre del proveedor: {{ equipo.proveedor_nombre }}</li>
-                <li>Teléfono del proveedor: {{ equipo.proveedor_telefono }}</li>
-                <li>Planta del equipo: {{ equipo.planta }}</li>
-            </ul>
-        {% else %}
-            <p>No existe este equipo.</p>
-        {% endif %}
+        <div class="box-equipos-detail">
+            {% if equipo %}
+                <a class="equipo-label">Número de serie</a>
+                <a class="equipo-content">{{ equipo.numero_serie }}</a>
+                <a class="equipo-label">Modelo</a>
+                <a class="equipo-content">{{ equipo.modelo }}</a>
+                <a class="equipo-label">Marca</a>
+                <a class="equipo-content">{{ equipo.marca }}</a>
+                <a class="equipo-label">Tipo de equipo</a>
+                <a class="equipo-content">{{ equipo.tipo_equipo }}</a>
+                <a class="equipo-label">Fecha de adquisición</a>
+                <a class="equipo-content">{{ equipo.fecha_adquisicion }}</a>
+                <a class="equipo-label">Fecha de puesta en marcha</a>
+                <a class="equipo-content">{{ equipo.fecha_puesta_marcha }}</a>
+                <a class="equipo-label">Nombre del proveedor</a>
+                <a class="equipo-content">{{ equipo.proveedor_nombre }}</a>
+                <a class="equipo-label">Teléfono del proveedor</a>
+                <a class="equipo-content">{{ equipo.proveedor_telefono }}</a>
+                <a class="equipo-label">Planta del equipo</a>
+                <a class="equipo-content">{{ equipo.planta }}</a>
+            {% else %}
+                <p>No existe este equipo.</p>
+            {% endif %}
+        </div>
+    </main>
 {% endblock %}

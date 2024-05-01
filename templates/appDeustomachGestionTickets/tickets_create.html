@@ -1,11 +1,18 @@
 {% extends 'base.html' %}
 {% block contenido %}
-    <h2>Nuevo ticket</h2>
-    <form action="{% url 'tickets_create' %}" method="post">
-        {% csrf_token %}
-        {{ formulario.errors }}
-        {{ formulario.as_ul }}
-        <input type="submit" value="Nuevo ticket"/>
-    </form>
-
+    <main class="tickets-create">
+        <h2>Nuevo ticket</h2>
+        <form class="ticket-form" action="{% url 'tickets_create' %}" method="post">
+            {% csrf_token %}
+            <div class="form-errors">
+                {{ formulario.errors }}
+            </div>
+            <div class="form-fields">
+                <div class="form-grid">
+                    {{ formulario.as_ul }}
+                </div>
+            </div>
+            <input type="submit" value="Nuevo ticket"/>
+        </form>
+    </main>
 {% endblock %}

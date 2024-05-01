@@ -1,3 +1,333 @@
-h1{
-    color:blue;
+h1, h2 {
+    font-family: "Bebas Neue", sans-serif;
+}
+
+a, h2, p {
+    font-family: "Raleway", sans-serif;
+    text-decoration: none;
+}
+
+.tickets-menu a,
+.tickets-index a,
+.empleados-menu a,
+.empleados-index a,
+.equipos-menu a,
+.equipos-index a
+{
+    margin-left: 2rem;
+    color: white;
+    font-weight: bold;
+}
+
+.empleados-index p,
+.equipos-index p,
+.tickets-index p {
+    margin-left: 3rem;
+}
+
+.tickets-grid a,
+.empleados-grid a,
+.equipos-grid a
+{
+    margin-left: 1rem;
+}
+
+.tickets-menu a:hover,
+.tickets-index a:hover,
+.empleados-menu a:hover,
+.empleados-index a:hover,
+.equipos-menu a:hover,
+.equipos-index a:hover{
+    color: #f5f5f5;
+}
+
+.tickets-menu h2,
+.tickets-index h2,
+.tickets-detail h2,
+.tickets-update h2,
+.empleados-menu h2,
+.empleados-index h2,
+.equipos-menu h2,
+.equipos-index h2,
+.equipos-detail h2,
+.equipos-delete h2,
+.empleados-detail h2
+{
+    margin-top: 4rem;
+    margin-left: 3rem;
+}
+
+.tickets-create h2,
+.equipos-create h2,
+.empleados-create h2
+{
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+
+.equipos-delete a,
+.tickets-update a {
+    margin-left: 3rem;
+    margin-top: 3rem;
+}
+
+.box-tickets-index,
+.box-tickets-create,
+.box-tickets-update,
+.box-equipos-index,
+.box-equipos-create,
+.box-equipos-delete,
+.box-empleados-index,
+.box-empleados-create
+{
+    padding: 2rem;
+    margin-left: 4rem;
+    margin-right: 24rem;
+    margin-top: 2rem;
+    background-color: #7288c4;
+}
+
+@media (max-width: 390px) {
+
+.box-tickets-index,
+.box-tickets-create,
+.box-tickets-update,
+.box-equipos-index,
+.box-equipos-create,
+.box-equipos-delete,
+.box-empleados-index,
+.box-empleados-create {
+        margin-right: 4rem;
+    }
+
+}
+
+.box-equipos-delete,
+.box-tickets-update {
+    margin-bottom: 3rem;
+}
+
+.box-tickets-item,
+.box-equipos-item,
+.box-empleados-item
+{
+    padding: 2rem;
+    margin-left: 4rem;
+    margin-right: 24rem;
+    margin-top: 1rem;
+    background-color: #7288c4;
+}
+
+.tickets-grid, .equipos-grid, .empleados-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+@media screen and (max-width: 390px) {
+    .tickets-grid, .equipos-grid, .empleados-grid {
+        margin-top: 3rem;
+        display: block; /* Cambiar a display block en dispositivos móviles */
+    }
+}
+
+.box-tickets-item, .box-equipos-item, .box-empleados-item {
+    background-color: #7288c4;
+    padding: 2rem;
+    margin-right: 4rem;
+    margin-left: 3rem;
+}
+
+.tickets-index,
+.empleados-index,
+.equipos-index
+{
+    margin-bottom: 4rem;
+}
+
+.ticket-label,
+.ticket-label-2,
+.ticket-label-3,
+.ticket-label-4,
+.equipo-label,
+.empleado-label {
+    font-size: 1.20rem;
+    font-weight: bold;
+    color: white;
+}
+
+.ticket-label-2 {
+    margin-bottom: 2rem;
+}
+
+.ticket-label-3,
+.ticket-label-4,
+.ticket-content-3,
+.ticket-content-4 {
+    margin-left: 2rem;
+}
+
+.ticket-content,
+.equipo-content,
+.empleado-content {
+    margin-bottom: 1.5rem;
+}
+
+.ticket-content-2 {
+    margin-bottom: 4rem;
+}
+
+.box-tickets-detail a,
+.box-equipos-detail a,
+.box-empleados-detail a {
+    display: block;
+    margin-top: 10px;
+}
+
+.box-tickets-detail,
+.box-equipos-detail,
+.box-empleados-detail {
+    background-color: #7288c4;
+    padding: 2rem;
+    margin: 2rem 30rem 5rem 4rem;
+}
+
+@media (max-width: 390px) {
+    .box-tickets-detail,
+    .box-equipos-detail,
+    .box-empleados-detail {
+        background-color: #7288c4;
+        padding: 2rem;
+        margin: 2rem 2rem 5rem 2rem;
+    }
+}
+
+.tickets-create,
+.equipos-create,
+.empleados-create {
+    padding: 2rem;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+}
+
+@media (max-width: 390px) {
+    .form-grid {
+        display: block;
+    }
+}
+
+.form-grid li {
+    list-style: none;
+}
+
+.form-grid label {
+    display: block;
+}
+
+.form-grid input[type="text"] {
+    width: 16rem;
+}
+
+.form-grid select {
+    width: 16rem;
+}
+
+
+.form-grid textarea {
+    resize: both;
+    width: 16rem;
+    height: 5rem;
+}
+
+.ticket-form,
+.equipo-form,
+.empleado-form {
+    border: 1px solid #666;
+    padding: 2rem;
+    margin-right: 15rem;
+    margin-top: 2.5rem;
+    margin-bottom: 5rem;
+}
+
+@media (max-width: 390px) {
+    .ticket-form,
+    .equipo-form,
+    .empleado-form {
+        border: none;
+    }
+}
+
+.ticket-form,
+.ticket-form *,
+.equipo-form,
+.equipo-form *,
+.empleado-form,
+.empleado-form * {
+    font-family: "Raleway", sans-serif;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+}
+
+@media (max-width: 390px) {
+    .grid-container {
+    display: block;
+    }
+}
+
+.grid-item {
+    margin-bottom: 1rem;
+}
+
+.equipo-form input[type="submit"] {
+    margin-top: 1.5rem;
+}
+
+.empleado-form input[type="submit"] {
+    margin-top: 1.5rem;
+}
+
+label[for="equipo_id"] {
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    margin-left: 3rem;
+}
+
+.form-equipos,
+.form-tickets {
+        margin-top: 2rem;
+}
+
+input[type="submit"] {
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    margin-left: 3rem;
+}
+
+.form-equipos select {
+    font-family: "Raleway", sans-serif; /* Cambia Arial por la fuente que desees */
+    font-size: 16px; /* Tamaño de la fuente */
+    /* Otros estilos según sea necesario */
+}
+
+.ticket-form,
+.form-fields {
+    margin-left: 3rem;
+}
+
+@media (max-width: 390px) {
+    .ticket-form,
+    .form-fields {
+    margin-left: 0;
+}
+}
+
+input[type="submit"] {
+    margin-top: 2rem;
 }
