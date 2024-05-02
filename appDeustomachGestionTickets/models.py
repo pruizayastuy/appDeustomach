@@ -17,13 +17,6 @@ class Ticket(models.Model):
     created = models.DateTimeField(default=timezone.now)
     updated = models.DateTimeField(auto_now=True)
 
-    def save(self, *args, **kwargs):
-        if not self.pk:
-            # Si es un nuevo objeto, establece el campo created
-            self.created = timezone.now()
-        self.updated = timezone.now()  # Siempre actualiza el campo updated
-        super().save(*args, **kwargs)
-
     def __str__(self):
         return self.numero_referencia
 
