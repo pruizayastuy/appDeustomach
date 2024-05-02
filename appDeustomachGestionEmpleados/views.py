@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, redirect
 from appDeustomachGestionEmpleados.models import Empleado
 from appDeustomachGestionEmpleados.forms import EmpleadoForm
 from django.views.generic import ListView, DetailView, View

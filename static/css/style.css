@@ -1,4 +1,5 @@
 /*General*/
+
 html{
     box-sizing: border-box;
 }
@@ -11,15 +12,17 @@ a, h2, h3, p{
     text-decoration: none;
     color: black;
 }
+
 /*Header*/
+
 .header-web{
-    padding-top: 20px;
-    padding-left: 40px;
+    padding-top: 2rem;
+    padding-left: 4rem;
     background-color: cadetblue;
 }
 .header{
     height: 100%;
-    padding-bottom: 10px;
+    padding-bottom: 1rem;
 }
 .nombre-web{
     color: darkblue;
@@ -43,14 +46,14 @@ a, h2, h3, p{
 .contenedor a {
     justify-content: center;
     display: inline-flex;
-    margin:0 100px;
+    margin:0 10rem;
     color: black;
     border-left: 2px solid gray;
     border-right: 2px solid gray;
     text-align: center;
     align-items: center;
     background-color: darkgray;
-    padding: 10px 20px;
+    padding: 1rem 2rem;
 }
 .contenedor a:hover{
     color: limegreen;
@@ -63,19 +66,20 @@ a, h2, h3, p{
     }
 }
 
-/* footer */
+/* Footer */
+
 .site-footer{
     background-color: black;
-    margin-top: 200px;
+    margin-top: 20rem;
     padding-bottom: 10%;
 }
 .site-footer a{
-    padding-top: 30px;
+    padding-top: 3rem;
     text-align: center;
     color: white;
 }
 .site-footer h2{
-    padding-top: 10px;
+    padding-top: 1rem;
     color: white;
     text-align: center;
 }
@@ -84,13 +88,15 @@ a, h2, h3, p{
     grid-template-columns: repeat(3, 1fr);
 }
 .bottom-footer{
-    padding-top: 30px;
+    padding-top: 3rem;
     color: white;
     text-align: center;
 }
 .bottom-footer a {
     color: #81d4fa;
 }
+
+/* Fuentes área de gestión */
 
 h1, h2 {
     font-family: "Bebas Neue", sans-serif;
@@ -165,6 +171,8 @@ a, h2, p {
     margin-top: 3rem;
 }
 
+/* Divs generales de apartados */
+
 .box-tickets-index,
 .box-tickets-create,
 .box-tickets-update,
@@ -212,6 +220,8 @@ a, h2, p {
     background-color: #7288c4;
 }
 
+/* Grids de listas */
+
 .tickets-grid, .equipos-grid, .empleados-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -220,7 +230,7 @@ a, h2, p {
 @media screen and (max-width: 390px) {
     .tickets-grid, .equipos-grid, .empleados-grid {
         margin-top: 3rem;
-        display: block; /* Cambiar a display block en dispositivos móviles */
+        display: block;
     }
 }
 
@@ -237,6 +247,8 @@ a, h2, p {
 {
     margin-bottom: 4rem;
 }
+
+/* Detalle de cada campo */
 
 .ticket-label,
 .ticket-label-2,
@@ -294,6 +306,8 @@ a, h2, p {
         margin: 2rem 2rem 5rem 2rem;
     }
 }
+
+/* Apartados create, update y delete */
 
 .tickets-create,
 .equipos-create,
