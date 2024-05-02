@@ -13,13 +13,14 @@ class Ticket(models.Model):
     estado_ticket = models.CharField(max_length=50)
     empleado_asignado = models.ForeignKey(Empleado, on_delete=models.CASCADE)
     comentarios = models.TextField(null=True, blank=True)
-    created = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now=True)
+    created = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    updated = models.DateTimeField(auto_now=True, null=True, blank=True)
 
     def __str__(self):
         return self.numero_referencia
 
-    class Meta:
-        verbose_name_plural = "tickets"
-        verbose_name = "ticket"
-        ordering = ["-created"]
+
+class Meta:
+    verbose_name_plural = "tickets"
+    verbose_name = "ticket"
+    ordering = ["-created"]

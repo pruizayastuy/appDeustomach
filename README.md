@@ -8,4 +8,7 @@ Gestión de empleados
 
 
 - Funcionalidades no operativas:
-La pantalla de actualización de tickets está implementada casi del todo, pero al actualizar el formulario devuelve este error: "Ticket matching query does not exist", y el campo se queda sin actualizar porque no encuentra la pk. No se ha conseguido solucionar.
+
+Se ha implementado la actualización de tickets en el detail de cada uno. 
+El campo create da error al ser 'None' y no cumplir con el 'NOT NULL', 
+a pesar de que hemos cambiado este campo y hemos hecho migraciones.

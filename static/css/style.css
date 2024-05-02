@@ -1,111 +1,122 @@
 /*General*/
 
+
 html{
-    box-sizing: border-box;
+   box-sizing: border-box;
 }
 h1{
 
-    font-family: "Bebas Nenue",sans-serif;
+
+   font-family: "Bebas Nenue",sans-serif;
 }
 a, h2, h3, p{
-    font-family: "Raleway",sans-serif;
-    text-decoration: none;
-    color: black;
+   font-family: "Raleway",sans-serif;
+   text-decoration: none;
+   color: black;
 }
+
 
 /*Header*/
 
+
 .header-web{
-    padding-top: 2rem;
-    padding-left: 4rem;
-    background-color: cadetblue;
+   padding-top: 2rem;
+   padding-left: 4rem;
+   background-color: cadetblue;
 }
 .header{
-    height: 100%;
-    padding-bottom: 1rem;
+   height: 100%;
+   padding-bottom: 1rem;
 }
 .nombre-web{
-    color: darkblue;
-    margin-bottom: 0;
+   color: darkblue;
+   margin-bottom: 0;
 }
 .subtitulo-web{
-    margin-top: 0;
-    color: #00363a;
+   margin-top: 0;
+   color: #00363a;
 }
 /*Navegacion*/
 .contenedor-nav{
-    padding-top: 5px;
-    padding-bottom: 5px;
-    border-top: 2px solid gray;
-    border-bottom: 2px solid gray;
+   padding-top: 5px;
+   padding-bottom: 5px;
+   border-top: 2px solid gray;
+   border-bottom: 2px solid gray;
 }
 .contenedor{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
 }
 .contenedor a {
-    justify-content: center;
-    display: inline-flex;
-    margin:0 10rem;
-    color: black;
-    border-left: 2px solid gray;
-    border-right: 2px solid gray;
-    text-align: center;
-    align-items: center;
-    background-color: darkgray;
-    padding: 1rem 2rem;
+   justify-content: center;
+   display: inline-flex;
+   margin:0 10rem;
+   color: black;
+   border-left: 2px solid gray;
+   border-right: 2px solid gray;
+   text-align: center;
+   align-items: center;
+   background-color: darkgray;
+   padding: 1rem 2rem;
 }
 .contenedor a:hover{
-    color: limegreen;
-    background-color: gray;
+   color: limegreen;
+   background-color: gray;
 }
-@media (max-width: 390px) {
+@media (max-width: 1200px) {
 
-    .contenedor{
-        grid-template-columns: auto;
-    }
+
+   .contenedor{
+       grid-template-columns: auto;
+   }
 }
+
 
 /* Footer */
 
+
 .site-footer{
-    background-color: black;
-    margin-top: 20rem;
-    padding-bottom: 10%;
+   background-color: black;
+   margin-top: 20rem;
+   padding-bottom: 10%;
 }
 .site-footer a{
-    padding-top: 3rem;
-    text-align: center;
-    color: white;
+   padding-top: 3rem;
+   text-align: center;
+   color: white;
 }
 .site-footer h2{
-    padding-top: 1rem;
-    color: white;
-    text-align: center;
+   padding-top: 1rem;
+   color: white;
+   text-align: center;
 }
 .navegacion{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
 }
 .bottom-footer{
-    padding-top: 3rem;
-    color: white;
-    text-align: center;
+   padding-top: 3rem;
+   color: white;
+   text-align: center;
 }
 .bottom-footer a {
-    color: #81d4fa;
+   color: #81d4fa;
 }
+
 
 /* Fuentes área de gestión */
 
+
 h1, h2 {
-    font-family: "Bebas Neue", sans-serif;
+   font-family: "Bebas Neue", sans-serif;
 }
 
+
 a, h2, p {
-    font-family: "Raleway", sans-serif;
-    text-decoration: none;
+   font-family: "Raleway", sans-serif;
+   text-decoration: none;
 }
+
 
 .tickets-menu a,
 .tickets-index a,
@@ -114,23 +125,26 @@ a, h2, p {
 .equipos-menu a,
 .equipos-index a
 {
-    margin-left: 2rem;
-    color: white;
-    font-weight: bold;
+   margin-left: 2rem;
+   color: white;
+   font-weight: bold;
 }
+
 
 .empleados-index p,
 .equipos-index p,
 .tickets-index p {
-    margin-left: 3rem;
+   margin-left: 3rem;
 }
+
 
 .tickets-grid a,
 .empleados-grid a,
 .equipos-grid a
 {
-    margin-left: 1rem;
+   margin-left: 1rem;
 }
+
 
 .tickets-menu a:hover,
 .tickets-index a:hover,
@@ -138,8 +152,9 @@ a, h2, p {
 .empleados-index a:hover,
 .equipos-menu a:hover,
 .equipos-index a:hover{
-    color: #f5f5f5;
+   color: #f5f5f5;
 }
+
 
 .tickets-menu h2,
 .tickets-index h2,
@@ -153,25 +168,44 @@ a, h2, p {
 .equipos-delete h2,
 .empleados-detail h2
 {
-    margin-top: 4rem;
-    margin-left: 3rem;
+   margin-top: 4rem;
+   margin-left: 3rem;
 }
+
 
 .tickets-create h2,
 .equipos-create h2,
 .empleados-create h2
 {
-    margin-top: 1rem;
-    margin-left: 1rem;
+   margin-top: 1rem;
+   margin-left: 1rem;
 }
 
-.equipos-delete a,
+
+.equipos-delete a {
+   margin-left: 3rem;
+   margin-top: 3rem;
+}
+
 .tickets-update a {
-    margin-left: 3rem;
-    margin-top: 3rem;
+   margin-left: 3rem;
+   margin-top: 3rem;
+   font-weight: bold;
+   color: white;
+}
+
+.box-tickets-update a {
+   color: white;
+   font-weight: bold;
+}
+
+.box-tickets-update a:hover {
+   color: #f5f5f5;
+
 }
 
 /* Divs generales de apartados */
+
 
 .box-tickets-index,
 .box-tickets-create,
@@ -182,73 +216,88 @@ a, h2, p {
 .box-empleados-index,
 .box-empleados-create
 {
-    padding: 2rem;
-    margin-left: 4rem;
-    margin-right: 24rem;
-    margin-top: 2rem;
-    background-color: #7288c4;
+   padding: 2rem;
+   margin-left: 4rem;
+   margin-right: 24rem;
+   margin-top: 2rem;
+   background-color: #7288c4;
 }
 
-@media (max-width: 390px) {
+
+@media (max-width: 700px) {
+
 
 .box-tickets-index,
 .box-tickets-create,
-.box-tickets-update,
 .box-equipos-index,
 .box-equipos-create,
 .box-equipos-delete,
 .box-empleados-index,
 .box-empleados-create {
-        margin-right: 4rem;
-    }
+       margin-right: 4rem;
+   }
+
 
 }
 
-.box-equipos-delete,
+
+.box-equipos-delete {
+   margin-bottom: 3rem;
+}
+
+
 .box-tickets-update {
-    margin-bottom: 3rem;
+   margin-bottom: 3rem;
+   margin-right: 30rem;
 }
 
 .box-tickets-item,
 .box-equipos-item,
 .box-empleados-item
 {
-    padding: 2rem;
-    margin-left: 4rem;
-    margin-right: 24rem;
-    margin-top: 1rem;
-    background-color: #7288c4;
+   padding: 2rem;
+   margin-left: 4rem;
+   margin-right: 24rem;
+   margin-top: 1rem;
+   background-color: #7288c4;
 }
+
 
 /* Grids de listas */
 
+
 .tickets-grid, .equipos-grid, .empleados-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
 }
 
-@media screen and (max-width: 390px) {
-    .tickets-grid, .equipos-grid, .empleados-grid {
-        margin-top: 3rem;
-        display: block;
-    }
+
+@media screen and (max-width: 950px) {
+   .tickets-grid, .equipos-grid, .empleados-grid {
+       margin-top: 3rem;
+       display: block;
+   }
 }
+
 
 .box-tickets-item, .box-equipos-item, .box-empleados-item {
-    background-color: #7288c4;
-    padding: 2rem;
-    margin-right: 4rem;
-    margin-left: 3rem;
+   background-color: #7288c4;
+   padding: 2rem;
+   margin-right: 4rem;
+   margin-left: 3rem;
 }
+
 
 .tickets-index,
 .empleados-index,
 .equipos-index
 {
-    margin-bottom: 4rem;
+   margin-bottom: 4rem;
 }
 
+
 /* Detalle de cada campo */
+
 
 .ticket-label,
 .ticket-label-2,
@@ -256,117 +305,137 @@ a, h2, p {
 .ticket-label-4,
 .equipo-label,
 .empleado-label {
-    font-size: 1.20rem;
-    font-weight: bold;
-    color: white;
+   font-size: 1.20rem;
+   font-weight: bold;
+   color: white;
 }
 
+
 .ticket-label-2 {
-    margin-bottom: 2rem;
+   margin-bottom: 2rem;
 }
+
 
 .ticket-label-3,
 .ticket-label-4,
 .ticket-content-3,
 .ticket-content-4 {
-    margin-left: 2rem;
+   margin-left: 2rem;
 }
+
 
 .ticket-content,
 .equipo-content,
 .empleado-content {
-    margin-bottom: 1.5rem;
+   margin-bottom: 1.5rem;
 }
 
+
 .ticket-content-2 {
-    margin-bottom: 4rem;
+   margin-bottom: 4rem;
 }
+
 
 .box-tickets-detail a,
 .box-equipos-detail a,
 .box-empleados-detail a {
-    display: block;
-    margin-top: 10px;
+   display: block;
+   margin-top: 10px;
 }
+
 
 .box-tickets-detail,
 .box-equipos-detail,
 .box-empleados-detail {
-    background-color: #7288c4;
-    padding: 2rem;
-    margin: 2rem 30rem 5rem 4rem;
+   background-color: #7288c4;
+   padding: 2rem;
+   margin: 2rem 30rem 5rem 4rem;
 }
 
-@media (max-width: 390px) {
-    .box-tickets-detail,
-    .box-equipos-detail,
-    .box-empleados-detail {
-        background-color: #7288c4;
-        padding: 2rem;
-        margin: 2rem 2rem 5rem 2rem;
-    }
+
+@media (max-width: 900px) {
+   .box-tickets-detail,
+   .box-equipos-detail,
+   .box-empleados-detail {
+       background-color: #7288c4;
+       padding: 2rem;
+       margin: 2rem 2rem 5rem 2rem;
+   }
 }
+
 
 /* Apartados create, update y delete */
+
 
 .tickets-create,
 .equipos-create,
 .empleados-create {
-    padding: 2rem;
+   padding: 2rem;
 }
+
 
 .form-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 2rem;
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   grid-gap: 2rem;
 }
 
-@media (max-width: 390px) {
-    .form-grid {
-        display: block;
-    }
+
+@media (max-width: 1030px) {
+   .form-grid {
+       display: block;
+   }
 }
+
 
 .form-grid li {
-    list-style: none;
+   list-style: none;
 }
+
 
 .form-grid label {
-    display: block;
+   display: block;
 }
+
 
 .form-grid input[type="text"] {
-    width: 16rem;
+   width: 16rem;
 }
 
+
 .form-grid select {
-    width: 16rem;
+   width: 16rem;
 }
+
+
 
 
 .form-grid textarea {
-    resize: both;
-    width: 16rem;
-    height: 5rem;
+   resize: both;
+   width: 16rem;
+   height: 5rem;
 }
+
 
 .ticket-form,
 .equipo-form,
 .empleado-form {
-    border: 1px solid #666;
-    padding: 2rem;
-    margin-right: 15rem;
-    margin-top: 2.5rem;
-    margin-bottom: 5rem;
+   border: 1px solid #666;
+   padding: 2rem;
+   margin-right: 15rem;
+   margin-top: 2.5rem;
+   margin-bottom: 5rem;
 }
 
-@media (max-width: 390px) {
-    .ticket-form,
-    .equipo-form,
-    .empleado-form {
-        border: none;
-    }
+
+@media (max-width: 1030px) {
+   .ticket-form,
+   .equipo-form,
+   .empleado-form {
+       border: none;
+   }
 }
+
 
 .ticket-form,
 .ticket-form *,
@@ -374,68 +443,81 @@ a, h2, p {
 .equipo-form *,
 .empleado-form,
 .empleado-form * {
-    font-family: "Raleway", sans-serif;
+   font-family: "Raleway", sans-serif;
 }
+
 
 .grid-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 1rem;
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   grid-gap: 1rem;
 }
 
-@media (max-width: 390px) {
-    .grid-container {
-    display: block;
-    }
+
+@media (max-width: 900px) {
+   .grid-container {
+   display: block;
+   }
 }
+
 
 .grid-item {
-    margin-bottom: 1rem;
+   margin-bottom: 1rem;
 }
+
 
 .equipo-form input[type="submit"] {
-    margin-top: 1.5rem;
+   margin-top: 1.5rem;
 }
+
 
 .empleado-form input[type="submit"] {
-    margin-top: 1.5rem;
+   margin-top: 1.5rem;
 }
 
+
 label[for="equipo_id"] {
-    font-family: "Raleway", sans-serif;
-    font-size: 16px;
-    margin-left: 3rem;
+   font-family: "Raleway", sans-serif;
+   font-size: 16px;
+   margin-left: 3rem;
 }
+
 
 .form-equipos,
 .form-tickets {
-        margin-top: 2rem;
+       margin-top: 2rem;
 }
+
 
 input[type="submit"] {
-    font-family: "Raleway", sans-serif;
-    font-size: 16px;
-    margin-left: 3rem;
+   font-family: "Raleway", sans-serif;
+   font-size: 16px;
+   margin-left: 3rem;
 }
 
+
 .form-equipos select {
-    font-family: "Raleway", sans-serif; /* Cambia Arial por la fuente que desees */
-    font-size: 16px; /* Tamaño de la fuente */
-    /* Otros estilos según sea necesario */
+   font-family: "Raleway", sans-serif;
+   font-size: 16px;
+
 }
+
 
 .ticket-form,
 .form-fields {
-    margin-left: 3rem;
+   margin-left: 3rem;
 }
 
-@media (max-width: 390px) {
-    .ticket-form,
-    .form-fields {
-    margin-left: 0;
+
+@media (max-width: 1030px) {
+   .ticket-form,
+   .form-fields {
+   margin-left: 0;
 }
+
 }
+
 
 input[type="submit"] {
-    margin-top: 2rem;
+   margin-top: 2rem;
 }

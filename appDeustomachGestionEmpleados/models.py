@@ -7,8 +7,8 @@ class Empleado(models.Model):
     apellidos = models.CharField(max_length=100)
     email = models.EmailField()
     telefono = models.CharField(max_length=20)
-    created = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now=True)
+    created = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    updated = models.DateTimeField(auto_now=True, null=True, blank=True)
 
     def __str__(self):
         return f"{self.dni} {self.nombre}"

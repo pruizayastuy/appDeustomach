@@ -1,10 +1,10 @@
 from django.http import HttpResponseRedirect
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, redirect
 from django.urls import reverse
 
-from appDeustomachGestionTickets.models import Ticket, Empleado
+from appDeustomachGestionTickets.models import Ticket
 from appDeustomachGestionTickets.forms import TicketForm
-from django.views.generic import ListView, DetailView, View, UpdateView
+from django.views.generic import ListView, DetailView, View
 
 
 class MenuTicketsView(View):
@@ -51,16 +51,20 @@ class TicketCreateView(View):
 
 
 class TicketUpdateView(View):
-    def get(self, request):
-        tickets = Ticket.objects.all()
-        context = {'tickets': tickets}
+    def get(self, request, pk):
+        ticket = Ticket.objects.get(pk=pk)
+        formulario = TicketForm(instance=ticket)
+
+        context = {
+            'formulario': formulario,
+            'ticket': ticket
+        }
         return render(request, 'appDeustomachGestionTickets/tickets_update.html', context)
 
-    def post(self, request):
-        ticket_id = request.POST.get('ticket_id')
-        ticket = Ticket.objects.get(pk=ticket_id)
-        formulario = TicketForm(instance=ticket)
-        context = {'formulario': formulario}
+    def post(self, request, pk):
+        ticket = Ticket.objects.get(pk=pk)
+        formulario = TicketForm(request.POST, instance=ticket)
+        context = {'formulario': formulario, 'ticket': ticket}
 
         if formulario.is_valid():
             formulario.save()

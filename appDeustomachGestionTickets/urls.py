@@ -22,5 +22,5 @@ urlpatterns = [
     path('/tickets/index', TicketListView.as_view(), name='tickets_index'),
     path('/tickets/show/<int:pk>/', TicketDetailView.as_view(), name='tickets_show'),
     path('/tickets/create', TicketCreateView.as_view(), name='tickets_create'),
-    path('tickets/update', TicketUpdateView.as_view(), name='tickets_update'),
+    path('tickets/update/<int:pk>/', TicketUpdateView.as_view(), name='tickets_update')
 ]
