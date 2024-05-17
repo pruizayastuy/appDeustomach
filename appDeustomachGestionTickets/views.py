@@ -1,12 +1,15 @@
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.urls import reverse
+from django.utils.decorators import method_decorator
 
 from appDeustomachGestionTickets.models import Ticket
 from appDeustomachGestionTickets.forms import TicketForm
 from django.views.generic import ListView, DetailView, View
 
 
+@method_decorator(login_required(login_url='/appDeustomachInicioSesion/login/'), name='dispatch')
 class MenuTicketsView(View):
     def get(self, request):
         return render(request, "appDeustomachGestionTickets/tickets_menu.html")

@@ -1,12 +1,15 @@
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse
+from django.utils.decorators import method_decorator
 
 from appDeustomachGestionEquipos.models import Equipo
 from appDeustomachGestionEquipos.forms import EquipoForm
 from django.views.generic import ListView, DetailView, View
 
 
+@method_decorator(login_required(login_url='/appDeustomachInicioSesion/login/'), name='dispatch')
 class MenuEquiposView(View):
     def get(self, request):
         return render(request, "appDeustomachGestionEquipos/equipos_menu.html")

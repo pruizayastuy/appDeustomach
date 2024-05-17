@@ -1,9 +1,13 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
+from django.utils.decorators import method_decorator
+
 from appDeustomachGestionEmpleados.models import Empleado
 from appDeustomachGestionEmpleados.forms import EmpleadoForm
 from django.views.generic import ListView, DetailView, View
 
 
+@method_decorator(login_required(login_url='/appDeustomachInicioSesion/login/'), name='dispatch')
 class MenuEmpleadosView(View):
     def get(self, request):
         return render(request, "appDeustomachGestionEmpleados/empleados_menu.html")

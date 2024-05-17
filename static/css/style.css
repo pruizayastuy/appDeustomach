@@ -419,7 +419,9 @@ a, h2, p {
 
 .ticket-form,
 .equipo-form,
-.empleado-form {
+.empleado-form,
+.login-form,
+.signup-form {
    border: 1px solid #666;
    padding: 2rem;
    margin-right: 15rem;
@@ -520,4 +522,79 @@ input[type="submit"] {
 
 input[type="submit"] {
    margin-top: 2rem;
+}
+
+/* Inicio de sesión y registro */
+
+.signup,
+.login {
+   font-family: "Raleway", sans-serif;
+   font-size: 16px;
+}
+
+.signup-form,
+.login-form {
+    display: flex;
+    flex-direction: column;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    flex-wrap: wrap; /* Permite que los elementos secundarios envuelvan */
+}
+
+.form-group a {
+    margin-top: 1rem;
+}
+
+.signup-form .form-group,
+.login-form .form-group {
+    display: flex;
+    flex-direction: row;
+}
+
+.signup label,
+.login label {
+    width: 20rem;
+    margin-right: 1rem;
+    text-align: left;
+   margin-bottom: 1rem;
+}
+
+.signup input,
+.signup p,
+.login input,
+.login p {
+    flex: 1;
+    margin-right: 0;
+}
+
+.signup p,
+.login p {
+    flex-basis: 100%;
+    margin-top: 1.5rem;
+    font-size: 0.8rem;
+}
+
+.signup h2,
+.login h2 {
+    margin-top: 5rem;
+    margin-left: 3rem;
+}
+
+.signup-form button,
+.login-form button {
+    margin-top: 1rem;
+    align-self: flex-start;
+}
+
+.signup-form input,
+.login-form input {
+    margin-right: 40rem;
+    flex: 1;
 }

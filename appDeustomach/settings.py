@@ -40,7 +40,12 @@ INSTALLED_APPS = [
     'appDeustomachGestionEquipos',
     'appDeustomachGestionEmpleados',
     'appDeustomachGestionTickets',
+    'appDeustomachInicioSesion'
 ]
+
+LOGIN_URL = '/appDeustomachInicioSesion/login/'
+LOGIN_REDIRECT_URL = '/appDeustomachGestionEquipos/equipos/menu'
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
