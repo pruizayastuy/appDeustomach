@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.views import View
 
 from appDeustomachInicioSesion.forms import SignupForm, LoginForm
@@ -28,11 +28,17 @@ class LoginView(View):
                 login(request, user)
                 return redirect('tickets_menu')
             else:
-                return render(request, 'appDeustomachInicioSesion/login.html', {'form': form, 'error_message': 'Invalid username or password'})
+                return render(request, 'appDeustomachInicioSesion/login.html',
+                              {'form': form, 'error_message': 'Invalid username or password'})
         else:
             return render(request, 'appDeustomachInicioSesion/login.html', {'form': form})
 
     def get(self, request):
         form = LoginForm()
         return render(request, 'appDeustomachInicioSesion/login.html', {'form': form})
-    
+
+
+class LogoutView(View):
+    def get(self, request):
+        logout(request)
+        return redirect('login')
