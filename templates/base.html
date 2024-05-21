@@ -25,13 +25,18 @@
     </header>
     <div id="content">
         <div class="contenedor-nav">
-            <nav class="contenedor"> <!--Solo son funcionales inicio, proyectos y contacto-->
+            <nav class="contenedor">
                 <a href="{% url 'equipos_menu' %}">Gestión de equipos</a>
                 <a href="{% url 'empleados_menu' %}">Gestión de empleados</a>
                 <a href="{% url 'tickets_menu' %}">Gestión de tickets</a>
             </nav>
         </div>
         {% block contenido %}{% endblock %}
+    <div class="selector-texto">
+        <button id="aumentar-fuente">+</button>
+        <button id="disminuir-fuente">-</button>
+        <p>Alterar tamaño del texto</p>
+    </div>
     </div>
      <footer class="site-footer">
          <h2>Deustomach</h2>
@@ -42,5 +47,6 @@
          </nav>
          <p class="bottom-footer">Copyright 2023 Todos los derechos reservados | Hecho por <a href="{% url 'equipos_menu' %}">Deustomach.com</a></p>
      </footer>
+    <script src="{% static 'js/base.js' %}"></script>
 </body>
 </html>

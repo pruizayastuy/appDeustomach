@@ -65,11 +65,27 @@ a, h2, h3, p{
 }
 @media (max-width: 1200px) {
 
-
    .contenedor{
        grid-template-columns: auto;
    }
 }
+
+/* Botones de tamaño de texto */
+
+.selector-texto {
+   border: 1px solid #666;
+   border-radius: 0.5rem;
+   padding: 1rem;
+   margin: 4rem 60rem 5rem 4rem;
+   font-size: 0.8rem;
+}
+
+@media (max-width: 1210px) {
+   .selector-texto {
+      margin-right: 35%; /* Utilizar un porcentaje en lugar de un valor fijo */
+   }
+}
+
 
 
 /* Footer */
@@ -209,7 +225,6 @@ a, h2, p {
 
 .box-tickets-index,
 .box-tickets-create,
-.box-tickets-update,
 .box-equipos-index,
 .box-equipos-create,
 .box-equipos-delete,
@@ -346,7 +361,8 @@ a, h2, p {
 
 .box-tickets-detail,
 .box-equipos-detail,
-.box-empleados-detail {
+.box-empleados-detail,
+.box-tickets-update {
    background-color: #7288c4;
    padding: 2rem;
    margin: 2rem 30rem 5rem 4rem;
@@ -356,7 +372,8 @@ a, h2, p {
 @media (max-width: 900px) {
    .box-tickets-detail,
    .box-equipos-detail,
-   .box-empleados-detail {
+   .box-empleados-detail,
+   .box-tickets-update {
        background-color: #7288c4;
        padding: 2rem;
        margin: 2rem 2rem 5rem 2rem;
