@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+    <title>{% block titulo %}Gestor de Empleados{% endblock %}</title>
+</head>
+<body>
+     <header>
+        <section class="header-web">
+            <div class="header">
+                <h1 class="nombre-web">Deustomach</h1>
+                <h3 class="subtitulo-web">Gestión empresarial</h3>
+            </div>
+            <div class="box-2"></div>
+        </section>
+    </header>
+    <div id="content">
+        <div class="contenedor-nav">
+            <nav class="contenedor">
+                <a href="{% url 'equipos_menu' %}">Gestión de equipos</a>
+                <a href="{% url 'empleados_menu' %}">Gestión de empleados</a>
+                <a href="{% url 'tickets_menu' %}">Gestión de tickets</a>
+            </nav>
+        </div>
+        <div class="opciones-sesion">
+            <a href="{% url 'login' %}">Inicio de sesión</a>
+            <a href="{% url 'logout' %}">Cerrar sesión</a>
+            <a href="{% url 'signup' %}">Registro</a>
+        </div>
+        {% block contenido %}{% endblock %}
+    <div class="selector-texto">
+        <button id="aumentar-fuente">+</button>
+        <button id="disminuir-fuente">-</button>
+        <p>Alterar tamaño del texto</p>
+    </div>
+    </div>
+     <footer class="site-footer">
+         <h2>Deustomach</h2>
+         <nav class="navegacion">
+            <a href="{% url 'equipos_menu' %}">Home</a>
+            <a href="#">Sobre Nosotros</a>
+            <a href="#">Contactos</a>
+         </nav>
+         <p class="bottom-footer">Copyright 2023 Todos los derechos reservados | Hecho por <a href="{% url 'equipos_menu' %}">Deustomach.com</a></p>
+     </footer>
+    <script src="{% static 'js/base.js' %}"></script>
+</body>
+</html>

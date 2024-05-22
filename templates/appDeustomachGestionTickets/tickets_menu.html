@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block contenido %}
+   <main class="tickets-menu">
+       <h2>Gestión de tickets</h2>
+       <section class="gestion-tickets">
+           <div class="box-tickets-index">
+               <a href="{% url 'tickets_index' %}">Lista de tickets</a>
+           </div>
+           <div class="box-tickets-create">
+               <a href="{% url 'tickets_create' %}">Crear tickets</a>
+           </div>
+       </section>
+   </main>
+{% endblock %}

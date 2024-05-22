@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block contenido %}
+    <main class="tickets-index">
+        <link rel="stylesheet" href="../../static/css/style.css">
+        <h2>Listado de tickets</h2>
+        <div class="box-busqueda">
+            <form  METHOD="POST">
+                {% csrf_token %}
+                <div class="busqueda">
+                    <input type="text" placeholder="Buscar..." name="buscar" value="{{ request.POST.buscar }}" >
+                    <button type="submit"> Buscar
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div class="tickets-grid">
+            {% if tickets %}
+                {% for ticket in tickets %}
+                    <div class="box-tickets-item">
+                        <a href="{% url 'tickets_show' ticket.id %}">
+                            {{ ticket.numero_referencia }} {{ ticket.titulo }}
+                        </a>
+                    </div>
+                {% endfor %}
+            {% else %}
+            <p>No hay tickets creados.</p>
+        {% endif %}
+        </div>
+    </main>
+{% endblock %}

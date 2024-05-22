@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block contenido %}
+    <main class="equipos-menu">
+        <link rel="stylesheet" href="../../static/css/style.css">
+        <h2>Gestión de equipos</h2>
+        <section class="gestion-tickets">
+            <div class="box-equipos-index">
+                <a href="{% url 'equipos_index' %}">Lista de equipos</a>
+            </div>
+            <div class="box-equipos-create">
+                <a href="{% url 'equipos_create' %}">Crear equipos</a>
+            </div>
+            <div class="box-equipos-delete">
+                <a href="{% url 'equipos_delete' %}">Eliminar equipos</a>
+            </div>
+        </section>
+    </main>
+{% endblock %}

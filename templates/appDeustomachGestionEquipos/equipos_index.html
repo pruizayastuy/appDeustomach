@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block contenido %}
+    <main class="equipos-index">
+        <link rel="stylesheet" href="../../static/css/style.css">
+        <h2>Listado de equipos</h2>
+        <form METHOD="POST">
+            {% csrf_token %}
+            <div>
+                <input type="text" placeholder="Buscar..." name="buscar" value="{{ request.POST.buscar }}" >
+                <button type="submit">
+                </button>
+            </div>
+        </form>
+        <div class="equipos-grid">
+            {% if equipos %}
+                {% for equipo in equipos %}
+                    <div class="box-equipos-item">
+                        <a href="{% url 'equipos_show' equipo.id %}">
+                            {{ equipo.numero_serie }} {{ equipo.modelo }}
+                        </a>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>No hay equipos creados.</p>
+            {% endif %}
+        </div>
+    </main>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block contenido %}
+   <main class="tickets-detail">
+       <h2>Detalle del ticket</h2>
+       <div class="box-tickets-detail">
+           {% if ticket %}
+               <a class="ticket-label">Número de referencia</a>
+               <a class="ticket-content">{{ ticket.numero_referencia }}</a>
+               <a class="ticket-label">Título</a>
+               <a class="ticket-content">{{ ticket.titulo }}</a>
+               <a class="ticket-label">Descripción detallada</a>
+               <a class="ticket-content">{{ ticket.descripcion_detallada }}</a>
+               <a class="ticket-label">Fecha de apertura</a>
+               <a class="ticket-content">{{ ticket.fecha_apertura }}</a>
+               <a class="ticket-label">Nivel de urgencia</a>
+               <a class="ticket-content">{{ ticket.nivel_urgencia }}</a>
+               <a class="ticket-label">Tipo de ticket</a>
+               <a class="ticket-content">{{ ticket.tipo_ticket }}</a>
+               <a class="ticket-label">Estado del ticket</a>
+               <a class="ticket-content-2">{{ ticket.estado_ticket }}</a>
+               {% if ticket.empleado_asignado %}
+                   <a class="ticket-label-2">Empleado Asignado</a>
+                   <a class="ticket-label-3">Nombre</a>
+                   <a class="ticket-content-3">{{ ticket.empleado_asignado.nombre }}</a>
+                   <a class="ticket-label-4">DNI</a>
+                   <a class="ticket-content-4">{{ ticket.empleado_asignado.dni }}</a>
+               {% endif %}
+           {% else %}
+               <p>No existe este ticket.</p>
+           {% endif %}
+       </div>
+       <div class="box-tickets-update">
+           <a href="{% url 'tickets_update' pk=ticket.pk %}">Actualizar ticket</a>
+       </div> 
+   </main>
+{% endblock %}

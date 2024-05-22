@@ -1,0 +1,10 @@
+asgiref==3.8.1
+Django==5.0.4
+django-datetimepicker==3.14
+django-extensions==3.2.3
+graphqlclient==0.2.4
+pyparsing==3.1.2
+setuptools==69.5.1
+six==1.16.0
+sqlparse==0.5.0
+tzdata==2024.1

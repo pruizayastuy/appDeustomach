@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block contenido %}
+    <main class="empleados-index">
+    <link rel="stylesheet" href="../../static/css/style.css">
+        <h2>Listado de empleados</h2>
+        <h2>busqueda</h2>
+        <form METHOD="POST">
+            {% csrf_token %}
+            <div>
+                <input type="text" placeholder="Buscar..." name="buscar" value="{{ request.POST.buscar }}" >
+                <button type="submit">
+                </button>
+            </div>
+        </form>
+        <div class="empleados-grid">
+            {% if empleados %}
+                {% for empleado in empleados %}
+                    <div class="box-empleados-item">
+                        <a href="{% url 'empleados_show' empleado.pk %}">
+                            {{ empleado.dni }} {{ empleado.nombre }}
+                        </a>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>No hay empleados creados.</p>
+            {% endif %}
+        </div>
+    </main>
+{% endblock %}

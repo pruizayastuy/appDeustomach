@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+    <main class="equipos-create">
+        <h2>Nuevo equipo</h2>
+        <form class="equipo-form" action="{% url 'equipos_create' %}" method="post">
+            {% csrf_token %}
+            <div class="form-errors">
+                {{ formulario.errors }}
+            </div>
+            <div class="form-fields">
+                <div class="grid-container">
+                    {% for field in formulario %}
+                        <div class="grid-item">
+                            {{ field.label_tag }}
+                            <br>
+                            {{ field }}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <input type="submit" value="Nuevo equipo"/>
+        </form>
+    </main>
+{% endblock %}
