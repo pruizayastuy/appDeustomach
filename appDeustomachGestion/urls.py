@@ -16,9 +16,10 @@ Including another URLconf
 """
 from django.urls import path
 from .views import (EmpleadoListView, EmpleadoDetailView, EmpleadoCreateView, MenuEmpleadosView, listar_empleados,
-                    EquipoListView, EquipoDetailView, EquipoCreateView, MenuEquiposView, EquipoDeleteView,
-                    listar_equipos, TicketListView, TicketDetailView, TicketCreateView, MenuTicketsView,
-                    TicketUpdateView, listar_tickets, SignupView, LoginView, LogoutView, EquipoUpdateView)
+                    EmpleadoUpdateView, EmpleadoDeleteView, EquipoListView, EquipoDetailView, EquipoCreateView,
+                    MenuEquiposView, EquipoUpdateView, EquipoDeleteView, listar_equipos, TicketListView,
+                    TicketDetailView, TicketCreateView, MenuTicketsView, TicketUpdateView, TicketDeleteView,
+                    listar_tickets, SignupView, LoginView, LogoutView, )
 
 urlpatterns = [
 
@@ -29,6 +30,8 @@ urlpatterns = [
     path('empleados-menu', EmpleadoListView.as_view(), name='empleados_menu'),
     path('empleados-show/<int:pk>', EmpleadoDetailView.as_view(), name='empleados_show'),
     path('empleados-create', EmpleadoCreateView.as_view(), name='empleados_create'),
+    path('empleados-update/<int:pk>', EmpleadoUpdateView.as_view(), name='empleados_update'),
+    path('empleados-delete/<int:pk>', EmpleadoDeleteView.as_view(), name='empleados_delete'),
 
     # urls de equipos
 
@@ -49,6 +52,7 @@ urlpatterns = [
     path('tickets-show/<int:pk>', TicketDetailView.as_view(), name='tickets_show'),
     path('tickets-create', TicketCreateView.as_view(), name='tickets_create'),
     path('tickets-update/<int:pk>', TicketUpdateView.as_view(), name='tickets_update'),
+    path('tickets-delete/<int:pk>', TicketDeleteView.as_view(), name='tickets_delete'),
 
 
     # urls de inicio de sesión

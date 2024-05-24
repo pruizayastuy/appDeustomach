@@ -27,6 +27,12 @@
                             <div class="box-tickets-update">
                                 <a href="{% url 'tickets_update' pk=ticket.pk %}">Actualizar ticket</a>
                             </div>
+                            <div class="eliminar">
+                                <form method="post" action="{% url 'tickets_delete' pk=ticket.pk %}" style="display:inline;">
+                                    {% csrf_token %}
+                                    <button type="submit" onclick="return confirm('¿Estás seguro de que deseas eliminar este ticket?');">Eliminar</button>
+                                </form>
+                            </div>
                         </div>
 
                    {% endfor %}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block contenido %}
+   <main class="empleados-update">
+       <h2>Actualizar empleado</h2>
+       <form class="empleado-form" method="post">
+           {% csrf_token %}
+           <div class="form-grid">
+               {{ formulario.as_ul }}
+           </div>
+           <div class="accesos">
+               <input type="submit" value="Actualizar empleado"/>
+               <a href="{% url 'empleados_menu' %}">Cancelar</a>
+           </div>
+       </form>
+       <div class="eliminar">
+           <form method="post" action="{% url 'empleados_delete' pk=empleado.pk %}" style="display:inline;">
+               {% csrf_token %}
+               <button type="submit" onclick="return confirm('¿Estás seguro de que deseas eliminar este empleado?');">Eliminar</button>
+           </form>
+       </div>
+   </main>
+{% endblock %}

@@ -28,7 +28,7 @@
                             <div class="box-tickets-update">
                                 <a href="{% url 'equipos_update' pk=equipo.pk %}">Actualizar equipo</a>
                             </div>
-                            <div class="equipo">
+                            <div class="eliminar">
                                 <form method="post" action="{% url 'equipos_delete' pk=equipo.pk %}" style="display:inline;">
                                     {% csrf_token %}
                                     <button type="submit" onclick="return confirm('¿Estás seguro de que deseas eliminar este equipo?');">Eliminar</button>

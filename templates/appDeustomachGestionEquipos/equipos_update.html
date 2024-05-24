@@ -7,7 +7,16 @@
            <div class="form-grid">
                {{ formulario.as_ul }}
            </div>
-           <input type="submit" value="Actualizar ticket"/>
+           <div class="accesos">
+               <input type="submit" value="Actualizar equipo"/>
+               <a href="{% url 'equipos_menu' %}">Cancelar</a>
+           </div>
        </form>
+       <div class="eliminar">
+           <form method="post" action="{% url 'equipos_delete' pk=equipo.pk %}" style="display:inline;">
+               {% csrf_token %}
+               <button type="submit" onclick="return confirm('¿Estás seguro de que deseas eliminar este equipo?');">Eliminar</button>
+           </form>
+       </div>
    </main>
 {% endblock %}

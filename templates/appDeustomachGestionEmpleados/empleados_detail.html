@@ -18,5 +18,17 @@
                 <p>No existe este empleado.</p>
             {% endif %}
         </div>
+        <div class="box-tickets-update">
+            <a href="{% url 'empleados_update' pk=empleado.pk %}">Actualizar empleado</a>
+            <div class="salir">
+                <a href="{% url 'empleados_menu' %}">Atras</a>
+            </div>
+        </div>
+       <div class="eliminar">
+           <form method="post" action="{% url 'empleados_delete' pk=empleado.pk %}" style="display:inline;">
+               {% csrf_token %}
+               <button type="submit" onclick="return confirm('¿Estás seguro de que deseas eliminar este empleado?');">Eliminar</button>
+           </form>
+       </div>
     </main>
 {% endblock %}

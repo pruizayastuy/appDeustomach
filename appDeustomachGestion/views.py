@@ -56,7 +56,38 @@ class EmpleadoCreateView(View):
             return redirect('empleados_menu')
         return render(request, 'appDeustomachGestionEmpleados/empleados_create.html', {'formulario': formulario})
 
+class EmpleadoUpdateView(View):
+    def get(self, request, pk):
+        empleado = Empleado.objects.get(pk=pk)
+        formulario = EmpleadoForm(instance=empleado)
 
+        context = {
+            'formulario': formulario,
+            'empleado': empleado
+        }
+        return render(request, 'appDeustomachGestionEmpleados/empleados_update.html', context)
+
+    def post(self, request, pk):
+        empleado = Empleado.objects.get(pk=pk)
+        formulario = EmpleadoForm(request.POST, instance=empleado)
+        context = {'formulario': formulario, 'equipo': empleado}
+
+        if formulario.is_valid():
+            formulario.save()
+            return redirect('empleados_menu')
+
+        return render(request, 'appDeustomachGestionEmpleados/empleados_update.html', context)
+
+class EmpleadoDeleteView(View):
+    def get(self, request):
+        empleado_id = request.POST.get('empleado_id')
+        empleados = get_object_or_404(Empleado, pk=empleado_id)
+        return render(request, 'appDeustomachGestionEmpleados/empleados_menu.html', {'empleados': empleados})
+
+    def post(self, request, pk):
+        empleado = get_object_or_404(Empleado, pk=pk)
+        empleado.delete()
+        return redirect('empleados_menu')
 # Vistas de equipos
 
 @method_decorator(login_required(login_url='/appDeustomachGestion/login'), name='dispatch')
@@ -134,7 +165,7 @@ class EquipoDeleteView(View):
     def get(self, request):
         equipo_id = request.POST.get('equipo_id')
         equipos = get_object_or_404(Equipo, pk=equipo_id)
-        return render(request, 'appDeustomachGestionEquipos/equipos_delete.html', {'equipos': equipos})
+        return render(request, 'appDeustomachGestionEquipos/equipos_menu.html', {'equipos': equipos})
 
     def post(self, request, pk):
         equipo = get_object_or_404(Equipo, pk=pk)
@@ -189,16 +220,13 @@ class TicketCreateView(View):
         return render(request, 'appDeustomachGestionTickets/tickets_create.html', context)
 
     def post(self, request):
-        ticket_id = request.POST.get('ticket_id')
-        ticket = Ticket.objects.get(pk=ticket_id)
-        formulario = TicketForm(request.POST, instance=ticket)
+        formulario = TicketForm(request.POST)
         if formulario.is_valid():
             formulario.save()
-            return HttpResponseRedirect(reverse('tickets_menu'))
+            return redirect(reverse('tickets_menu'))
         else:
             context = {'formulario': formulario}
-            return render(request, 'appDeustomachGestionTickets/tickets_update.html', context)
-
+            return render(request, 'appDeustomachGestionTickets/tickets_create.html', context)
 
 class TicketUpdateView(View):
     def get(self, request, pk):
@@ -223,6 +251,17 @@ class TicketUpdateView(View):
         return render(request, 'appDeustomachGestionTickets/tickets_update.html', context)
 
 
+class TicketDeleteView(View):
+    def get(self, request):
+        ticket_id = request.POST.get('ticket_id')
+        tickets = get_object_or_404(Equipo, pk=ticket_id)
+        return render(request, 'appDeustomachGestionTickets/tickets_menu.html', {'tickets': tickets})
+
+    def post(self, request, pk):
+        ticket = get_object_or_404(Ticket, pk=pk)
+        ticket.delete()
+        return redirect('tickets_menu')
+
 # Vistas de inicio de sesión
 
 class SignupView(View):
@@ -231,6 +270,8 @@ class SignupView(View):
         if form.is_valid():
             form.save()
             return redirect('login')
+        else:
+            return render(request, 'appDeustomachInicioSesion/signup.html', {'form': form, 'signup_failed': True})
 
     def get(self, request):
         form = SignupForm()
@@ -248,8 +289,7 @@ class LoginView(View):
                 login(request, user)
                 return redirect('tickets_menu')
             else:
-                return render(request, 'appDeustomachInicioSesion/login.html',
-                              {'form': form, 'error_message': 'Invalid username or password'})
+                return render(request, 'appDeustomachInicioSesion/login.html', {'form': form, 'login_failed': True})
         else:
             return render(request, 'appDeustomachInicioSesion/login.html', {'form': form})
 
