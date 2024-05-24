@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block contenido %}
     <main class="empleados-create">
         <h2>Nuevo empleado</h2>
@@ -21,4 +22,5 @@
             <input type="submit" value="Nuevo empleado" class="input-submit" />
         </form>
     </main>
+    <script src="{% static 'js/createmail.js' %}"></script>
 {% endblock %}

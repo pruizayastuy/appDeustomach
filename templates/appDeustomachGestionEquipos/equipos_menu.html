@@ -4,14 +4,41 @@
         <link rel="stylesheet" href="../../static/css/style.css">
         <h2>Gestión de equipos</h2>
         <section class="gestion-tickets">
-            <div class="box-equipos-index">
-                <a href="{% url 'equipos_index' %}">Lista de equipos</a>
-            </div>
             <div class="box-equipos-create">
                 <a href="{% url 'equipos_create' %}">Crear equipos</a>
             </div>
-            <div class="box-equipos-delete">
-                <a href="{% url 'equipos_delete' %}">Eliminar equipos</a>
+            <h2>Listado de equipos</h2>
+            <div class="box-busqueda">
+                <form  METHOD="POST">
+                    {% csrf_token %}
+                    <div class="busqueda">
+                        <input type="text" name="buscar" value="{{ request.POST.buscar }}" >
+                        <button type="submit"> Buscar
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="equipos-grid">
+                {% if equipos %}
+                    {% for equipo in equipos %}
+                        <div class="box-equipos-item">
+                            <a href="{% url 'equipos_show' equipo.id %}">
+                                {{ equipo.numero_serie }} {{ equipo.modelo }}
+                            </a>
+                            <div class="box-tickets-update">
+                                <a href="{% url 'equipos_update' pk=equipo.pk %}">Actualizar equipo</a>
+                            </div>
+                            <div class="equipo">
+                                <form method="post" action="{% url 'equipos_delete' pk=equipo.pk %}" style="display:inline;">
+                                    {% csrf_token %}
+                                    <button type="submit" onclick="return confirm('¿Estás seguro de que deseas eliminar este equipo?');">Eliminar</button>
+                                </form>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p>No hay equipos creados.</p>
+                {% endif %}
             </div>
         </section>
     </main>

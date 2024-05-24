@@ -3,11 +3,32 @@
     <main class="empleados-menu">
     <h2>Gestión de empleados</h2>
         <section class="gestion-tickets">
-            <div class="box-empleados-index">
-                <a href="{% url 'empleados_index' %}">Lista de empleados</a>
-            </div>
             <div class="box-empleados-create">
                 <a href="{% url 'empleados_create' %}">Crear empleados</a>
+            </div>
+            <h2>Listado de empleados</h2>
+            <div class="box-busqueda">
+                <form METHOD="POST">
+                    {% csrf_token %}
+                    <div class="busqueda">
+                        <input type="text" placeholder="Buscar..." name="buscar" value="{{ request.POST.buscar }}" >
+                        <button type="submit"> Buscar
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="empleados-grid">
+                {% if empleados %}
+                    {% for empleado in empleados %}
+                        <div class="box-empleados-item">
+                            <a href="{% url 'empleados_show' empleado.pk %}">
+                                {{ empleado.dni }} {{ empleado.nombre }} {{ empleado.apellidos }}
+                            </a>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p>No hay empleados creados.</p>
+                {% endif %}
             </div>
         </section>
     </main>

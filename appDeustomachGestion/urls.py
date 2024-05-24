@@ -18,33 +18,34 @@ from django.urls import path
 from .views import (EmpleadoListView, EmpleadoDetailView, EmpleadoCreateView, MenuEmpleadosView, listar_empleados,
                     EquipoListView, EquipoDetailView, EquipoCreateView, MenuEquiposView, EquipoDeleteView,
                     listar_equipos, TicketListView, TicketDetailView, TicketCreateView, MenuTicketsView,
-                    TicketUpdateView, listar_tickets, SignupView, LoginView, LogoutView)
+                    TicketUpdateView, listar_tickets, SignupView, LoginView, LogoutView, EquipoUpdateView)
 
 urlpatterns = [
 
     # urls de empleados
 
-    path('empleados-index', listar_empleados, name='empleados'),
+    path('empleados-menu', listar_empleados, name='empleados'),
     path('emplados-menu', MenuEmpleadosView.as_view(), name='empleados_menu'),
-    path('empleados-index', EmpleadoListView.as_view(), name='empleados_index'),
+    path('empleados-menu', EmpleadoListView.as_view(), name='empleados_menu'),
     path('empleados-show/<int:pk>', EmpleadoDetailView.as_view(), name='empleados_show'),
     path('empleados-create', EmpleadoCreateView.as_view(), name='empleados_create'),
 
     # urls de equipos
 
-    path('equipos-index', listar_equipos, name='equipos'),
+    path('equipos-menu', listar_equipos, name='equipos'),
     path('equipos-menu', MenuEquiposView.as_view(), name='equipos_menu'),
-    path('equipos-index', EquipoListView.as_view(), name='equipos_index'),
+    path('equipos-menu', EquipoListView.as_view(), name='equipos_menu'),
     path('equipos-show/<int:pk>', EquipoDetailView.as_view(), name='equipos_show'),
     path('equipos-create', EquipoCreateView.as_view(), name='equipos_create'),
-    path('equipos-delete', EquipoDeleteView.as_view(), name='equipos_delete'),
+    path('equipos-delete/<int:pk>', EquipoDeleteView.as_view(), name='equipos_delete'),
+    path('equipos-update/<int:pk>', EquipoUpdateView.as_view(), name='equipos_update'),
 
 
     # urls de tickets
 
-    path('tickets-index', listar_tickets, name='tickets'),
+    path('tickets-menu', listar_tickets, name='tickets'),
     path('tickets-menu', MenuTicketsView.as_view(), name='tickets_menu'),
-    path('tickets-index', TicketListView.as_view(), name='tickets_index'),
+    path('tickets-menu', TicketListView.as_view(), name='tickets_menu'),
     path('tickets-show/<int:pk>', TicketDetailView.as_view(), name='tickets_show'),
     path('tickets-create', TicketCreateView.as_view(), name='tickets_create'),
     path('tickets-update/<int:pk>', TicketUpdateView.as_view(), name='tickets_update'),

@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block contenido %}
 <main class="login">
     <h2>Inicio de sesión</h2>
-    <form class="login-form" method="POST">
+    <form id="login-form" class="login-form" method="POST" data-login-failed="{{ login_failed|yesno:"true,false" }}">
         {% csrf_token %}
         <div class="form-group">
             <label for="{{ form.username.id_for_label }}">Nombre de usuario</label>
@@ -16,4 +17,5 @@
         <a href="{% url 'signup' %}">¿No tienes una cuenta? Haz click aquí para registrarte</a>
     </form>
 </main>
+<script src="{% static 'js/loginvalidation.js' %}"></script>
 {% endblock %}
