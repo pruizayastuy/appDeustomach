@@ -3,15 +3,16 @@
     <main class="empleados-index">
     <link rel="stylesheet" href="../../static/css/style.css">
         <h2>Listado de empleados</h2>
-        <h2>busqueda</h2>
-        <form METHOD="POST">
-            {% csrf_token %}
-            <div>
-                <input type="text" placeholder="Buscar..." name="buscar" value="{{ request.POST.buscar }}" >
-                <button type="submit">
-                </button>
-            </div>
-        </form>
+        <div class="box-busqueda">
+            <form METHOD="POST">
+                {% csrf_token %}
+                <div class="busqueda">
+                    <input type="text" placeholder="Buscar..." name="buscar" value="{{ request.POST.buscar }}" >
+                    <button type="submit"> Buscar
+                    </button>
+                </div>
+            </form>
+        </div>
         <div class="empleados-grid">
             {% if empleados %}
                 {% for empleado in empleados %}

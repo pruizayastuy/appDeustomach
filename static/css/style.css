@@ -448,7 +448,7 @@ a, h2, p {
 
 
 .ticket-label-2 {
-   margin-bottom: 2rem;
+    margin-bottom: 2rem;
 }
 
 
@@ -457,6 +457,7 @@ a, h2, p {
 .ticket-content-3,
 .ticket-content-4 {
    margin-left: 2rem;
+    margin-bottom: 2rem;
 }
 
 
@@ -475,8 +476,8 @@ a, h2, p {
 .box-tickets-detail a,
 .box-equipos-detail a,
 .box-empleados-detail a {
-   display: block;
-   margin-top: 10px;
+    display: block;
+    margin-top: 1rem;
 }
 
 

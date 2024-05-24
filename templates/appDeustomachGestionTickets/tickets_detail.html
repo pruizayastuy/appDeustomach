@@ -25,6 +25,13 @@
                    <a class="ticket-label-4">DNI</a>
                    <a class="ticket-content-4">{{ ticket.empleado_asignado.dni }}</a>
                {% endif %}
+               {% if ticket.equipo_asignado %}
+                   <a class="ticket-label-2">Equipo Asignado</a>
+                   <a class="ticket-label-3">Nombre</a>
+                   <a class="ticket-content-3">{{ ticket.equipo_asignado.numero_serie }}</a>
+                   <a class="ticket-label-4">Teléfono</a>
+                   <a class="ticket-content-4">{{ ticket.equipo_asignado.modelo }}</a>
+               {% endif %}
            {% else %}
                <p>No existe este ticket.</p>
            {% endif %}

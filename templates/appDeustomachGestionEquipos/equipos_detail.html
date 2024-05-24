@@ -17,9 +17,9 @@
                 <a class="equipo-label">Fecha de puesta en marcha</a>
                 <a class="equipo-content">{{ equipo.fecha_puesta_marcha }}</a>
                 <a class="equipo-label">Nombre del proveedor</a>
-                <a class="equipo-content">{{ equipo.proveedor_nombre }}</a>
+                <a class="equipo-content">{{ equipo.informacion_proveedor.nombre }}</a>
                 <a class="equipo-label">Teléfono del proveedor</a>
-                <a class="equipo-content">{{ equipo.proveedor_telefono }}</a>
+                <a class="equipo-content">{{ equipo.informacion_proveedor.telefono }}</a>
                 <a class="equipo-label">Planta del equipo</a>
                 <a class="equipo-content">{{ equipo.planta }}</a>
             {% else %}
