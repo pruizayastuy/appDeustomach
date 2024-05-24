@@ -28,12 +28,12 @@ def listar_empleados(request):
             Q(nombre__icontains=busqueda)
         ).distinct()
 
-    return render(request, "appDeustomachGestionEmpleados/empleados_index.html", {"empleados": empleados})
+    return render(request, "appDeustomachGestionEmpleados/empleados_menu.html", {"empleados": empleados})
 
 
 class EmpleadoListView(ListView):
     model = Empleado
-    template_name = "appDeustomachGestionEmpleados/empleados_index.html"
+    template_name = "appDeustomachGestionEmpleados/empleados_menu.html"
     context_object_name = "empleados"
 
 
@@ -53,7 +53,7 @@ class EmpleadoCreateView(View):
         formulario = EmpleadoForm(data=request.POST)
         if formulario.is_valid():
             formulario.save()
-            return redirect('empleados_index')
+            return redirect('empleados_menu')
         return render(request, 'appDeustomachGestionEmpleados/empleados_create.html', {'formulario': formulario})
 
 
@@ -74,12 +74,12 @@ def listar_equipos(request):
             Q(modelo__icontains=busqueda)
         ).distinct()
 
-    return render(request, "appDeustomachGestionEquipos/equipos_index.html", {"equipos": equipos})
+    return render(request, "appDeustomachGestionEquipos/equipos_menu.html", {"equipos": equipos})
 
 
 class EquipoListView(ListView):
     model = Equipo
-    template_name = "appDeustomachGestionEquipos/equipos_index.html"
+    template_name = "appDeustomachGestionEquipos/equipos_menu.html"
     context_object_name = "equipos"
 
 
@@ -96,23 +96,50 @@ class EquipoCreateView(View):
         return render(request, 'appDeustomachGestionEquipos/equipos_create.html', context)
 
     def post(self, request):
-        formulario = EquipoForm(data=request.POST)
+        formulario = EquipoForm(request.POST)
         if formulario.is_valid():
             formulario.save()
-            return redirect('equipos_index')
-        return render(request, 'appDeustomachGestionEquipos/equipos_create.html', {'formulario': formulario})
+            return redirect('equipos_menu')
+        else:
+            context = {'formulario': formulario}
+            return render(request, 'appDeustomachGestionEquipos/equipos_create.html', context)
+
+
+
+#Actualizar Equipo
+class EquipoUpdateView(View):
+    def get(self, request, pk):
+        equipo = Equipo.objects.get(pk=pk)
+        formulario = EquipoForm(instance=equipo)
+
+        context = {
+            'formulario': formulario,
+            'equipo': equipo
+        }
+        return render(request, 'appDeustomachGestionEquipos/equipos_update.html', context)
+
+    def post(self, request, pk):
+        equipo = Equipo.objects.get(pk=pk)
+        formulario = EquipoForm(request.POST, instance=equipo)
+        context = {'formulario': formulario, 'equipo': equipo}
+
+        if formulario.is_valid():
+            formulario.save()
+            return redirect('equipos_menu')
+
+        return render(request, 'appDeustomachGestionEquipos/equipos_update.html', context)
 
 
 class EquipoDeleteView(View):
     def get(self, request):
-        equipos = Equipo.objects.all()
+        equipo_id = request.POST.get('equipo_id')
+        equipos = get_object_or_404(Equipo, pk=equipo_id)
         return render(request, 'appDeustomachGestionEquipos/equipos_delete.html', {'equipos': equipos})
 
-    def post(self, request):
-        equipo_id = request.POST.get('equipo_id')
-        equipo = get_object_or_404(Equipo, pk=equipo_id)
+    def post(self, request, pk):
+        equipo = get_object_or_404(Equipo, pk=pk)
         equipo.delete()
-        return redirect('equipos_index')
+        return redirect('equipos_menu')
 
 
 # Vistas de tickets
@@ -132,12 +159,12 @@ def listar_tickets(request):
             Q(titulo__icontains=busqueda)
         ).distinct()
 
-    return render(request, "appDeustomachGestionTickets/tickets_index.html", {"tickets": tickets})
+    return render(request, "appDeustomachGestionTickets/tickets_menu.html", {"tickets": tickets})
 
 
 class TicketListView(ListView):
     model = Ticket
-    template_name = "appDeustomachGestionTickets/tickets_index.html"
+    template_name = "appDeustomachGestionTickets/tickets_menu.html"
     context_object_name = "tickets"
 
 
@@ -167,7 +194,7 @@ class TicketCreateView(View):
         formulario = TicketForm(request.POST, instance=ticket)
         if formulario.is_valid():
             formulario.save()
-            return HttpResponseRedirect(reverse('tickets_index'))
+            return HttpResponseRedirect(reverse('tickets_menu'))
         else:
             context = {'formulario': formulario}
             return render(request, 'appDeustomachGestionTickets/tickets_update.html', context)
@@ -191,7 +218,7 @@ class TicketUpdateView(View):
 
         if formulario.is_valid():
             formulario.save()
-            return redirect('tickets_index')
+            return redirect('tickets_menu')
 
         return render(request, 'appDeustomachGestionTickets/tickets_update.html', context)
 

@@ -3,11 +3,36 @@
    <main class="tickets-menu">
        <h2>Gestión de tickets</h2>
        <section class="gestion-tickets">
-           <div class="box-tickets-index">
-               <a href="{% url 'tickets_index' %}">Lista de tickets</a>
-           </div>
            <div class="box-tickets-create">
                <a href="{% url 'tickets_create' %}">Crear tickets</a>
+           </div>
+           <h2>Listado de tickets</h2>
+           <div class="box-busqueda">
+                <form  METHOD="POST">
+                    {% csrf_token %}
+                    <div class="busqueda">
+                        <input type="text" placeholder="Buscar..." name="buscar" value="{{ request.POST.buscar }}" >
+                        <button type="submit"> Buscar
+                        </button>
+                    </div>
+                </form>
+            </div>
+           <div class="tickets-grid">
+               {% if tickets %}
+                    {% for ticket in tickets %}
+                        <div class="box-tickets-item">
+                            <a href="{% url 'tickets_show' ticket.id %}">
+                                {{ ticket.numero_referencia }} {{ ticket.titulo }} {{ ticket.estado_ticket }}
+                            </a>
+                            <div class="box-tickets-update">
+                                <a href="{% url 'tickets_update' pk=ticket.pk %}">Actualizar ticket</a>
+                            </div>
+                        </div>
+
+                   {% endfor %}
+               {% else %}
+                     <p>No hay tickets creados.</p>
+                {% endif %}
            </div>
        </section>
    </main>
