@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from django.forms import DateInput
 
 from appDeustomachGestion.models import Empleado, Equipo, Ticket
 
@@ -29,15 +30,19 @@ class EquipoForm(forms.ModelForm):
             'tipo_equipo': 'Tipo de equipo',
             'fecha_adquisicion': 'Fecha de adquisición',
             'fecha_puesta_marcha': 'Fecha de puesta en marcha',
-            'proveedor_nombre': 'Nombre del proveedor',
-            'proveedor_telefono': 'Teléfono del proveedor',
+            'informacion_proveedor': 'Información del proveedor',
             'planta': 'Planta',
+        }
+        widgets = {
+            'fecha_adquisicion': DateInput(attrs={'type': 'date'}),
+            'fecha_puesta_marcha': DateInput(attrs={'type': 'date'}),
         }
 
 
 class TicketForm(forms.ModelForm):
     class Meta:
         model = Ticket
+        exclude = ['created']
         fields = '__all__'
         labels = {
             'numero_referencia': 'Número de referencia',
@@ -49,7 +54,12 @@ class TicketForm(forms.ModelForm):
             'tipo_ticket': 'Tipo de ticket',
             'estado_ticket': 'Estado del ticket',
             'empleado_asignado': 'Empleado asignado',
+            'equipo_asignado': 'Equipo asignado',
             'comentarios': 'Comentarios',
+        }
+        widgets = {
+            'fecha_apertura': DateInput(attrs={'type': 'date'}),
+            'fecha_resolucion': DateInput(attrs={'type': 'date'}),
         }
 
 

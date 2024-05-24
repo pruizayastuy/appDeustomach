@@ -20,7 +20,11 @@
                 <h1 class="nombre-web">Deustomach</h1>
                 <h3 class="subtitulo-web">Gestión empresarial</h3>
             </div>
-            <div class="box-2"></div>
+            <div class="opciones-sesion">
+                <a href="{% url 'login' %}">Inicio de sesión</a>
+                <a href="{% url 'logout' %}">Cerrar sesión</a>
+                <a href="{% url 'signup' %}">Registro</a>
+            </div>
         </section>
     </header>
     <div id="content">
@@ -30,11 +34,6 @@
                 <a href="{% url 'empleados_menu' %}">Gestión de empleados</a>
                 <a href="{% url 'tickets_menu' %}">Gestión de tickets</a>
             </nav>
-        </div>
-        <div class="opciones-sesion">
-            <a href="{% url 'login' %}">Inicio de sesión</a>
-            <a href="{% url 'logout' %}">Cerrar sesión</a>
-            <a href="{% url 'signup' %}">Registro</a>
         </div>
         {% block contenido %}{% endblock %}
     <div class="selector-texto">

@@ -20,14 +20,20 @@ a, h2, h3, p{
 
 
 .header-web{
-   padding-top: 2rem;
-   padding-left: 4rem;
-   background-color: #7288c4;
+    justify-content: space-between;
+    display: flex;
+    padding-top: 2rem;
+    padding-left: 4rem;
+    background-color: #7288c4;
 }
 .header{
    height: 100%;
-   padding-bottom: 1rem;
+   padding-bottom: 2rem;
    font-size: 1.2rem;
+}
+.header h1, h3 {
+    display: inline;
+    margin-right: 2rem;
 }
 .nombre-web{
    color: white;
@@ -38,11 +44,63 @@ a, h2, h3, p{
    color: white;
 }
 
+.opciones-sesion {
+     text-align: right;
+     border-radius: 0.5rem;
+     padding: 1rem;
+     margin-right: 3rem;
+     flex-wrap: wrap;
+}
+
+.opciones-sesion a {
+    border-right: 2px solid white;
+    padding-right: 1rem;
+    margin-right: 1rem;
+    color: white;
+    white-space: nowrap;
+}
+
+.opciones-sesion a:last-child {
+    border-right: none;
+    margin-right: 0;
+}
+
+@media (max-width: 1000px) {
+    .header-web {
+        font-size: 0.8rem;
+        flex-direction: column;
+        margin-right: 0;
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 510px) {
+    .subtitulo-web {
+        display: block;
+        align-items: center;
+    }
+    .opciones-sesion {
+        align-items: center;
+        margin-right: 0;
+        padding: 0.5rem;
+    }
+
+    .opciones-sesion a {
+        padding-right: 0.5rem;
+        margin-right: 0.5rem;
+        border-right: 1px solid white;
+    }
+
+    .opciones-sesion a:last-child {
+        border-right: none;
+        margin-right: 0;
+    }
+}
+
+
 /*Navegacion*/
 
 .contenedor-nav{
-   padding-top: 5px;
-   padding-bottom: 5px;
    border-top: 2px solid gray;
    border-bottom: 2px solid gray;
 }
@@ -55,8 +113,8 @@ a, h2, h3, p{
 .contenedor a {
     justify-content: center;
     display: inline-flex;
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     color: black;
     text-align: center;
     align-items: center;
@@ -84,11 +142,11 @@ a, h2, h3, p{
 /* Botones de tamaño de texto */
 
 .selector-texto {
-   border: 1px solid #666;
-   border-radius: 0.5rem;
-   padding: 1rem;
-   margin: 4rem 60rem 5rem 4rem;
-   font-size: 0.8rem;
+    border: 1px solid #666;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin: 1rem 60rem 2rem 4rem;
+    font-size: 0.8rem;
 }
 
 @media (max-width: 1210px) {
@@ -102,7 +160,7 @@ a, h2, h3, p{
 /* Footer */
 
 .site-footer{
-    margin-top: 8rem;
+    margin-top: 3rem;
     padding-bottom: 1%;
     border-top:2px solid gray;
 }
@@ -126,14 +184,13 @@ a, h2, h3, p{
 
 
 .site-footer p {
-    margin-top: 3rem;
     font-size: 0.8rem;
     color: black;
 }
 
 .site-footer h2{
-    padding-top: 2rem;
-    padding-bottom: 3rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     color: black;
     text-align: center;
     font-size: 2rem;
@@ -151,6 +208,13 @@ a, h2, h3, p{
 }
 .bottom-footer a {
     color: #81d4fa;
+}
+
+@media (max-width: 500px) {
+
+    .navegacion a {
+        font-size: 0.8rem;
+    }
 }
 
 
@@ -217,23 +281,20 @@ a, h2, p {
 .equipos-delete h2,
 .empleados-detail h2
 {
-   margin-top: 9rem;
+   margin-top: 3rem;
    margin-left: 3rem;
 }
 
 /*Buscador*/
 .box-busqueda{
-    /*background-color: #5897fb;*/
     display: flex;
     justify-content: space-between;
     margin-left: 3rem;
-    padding: 1rem 0rem;
+    padding: 1rem 0;
 }
 
 .busqueda{
-    margin-right: auto;
-
-
+    height: 1.5rem;
 }
 .busqueda input{
     font-family: "Raleway",sans-serif;
@@ -242,9 +303,6 @@ a, h2, p {
     font-family: "Raleway",sans-serif;
     width: 4rem;
     height: 1.5rem;
-}
-.box-busqueda h2{
-    margin-top: 0rem;
 }
 
 .tickets-create h2,
@@ -294,6 +352,11 @@ a, h2, p {
    margin-right: 24rem;
    margin-top: 2rem;
    background-color: #7288c4;
+}
+
+.box-tickets-create,
+.box-empleados-create {
+    margin-bottom: 3rem;
 }
 
 
@@ -637,7 +700,7 @@ input[type="submit"] {
     width: 20rem;
     margin-right: 1rem;
     text-align: left;
-   margin-bottom: 1rem;
+    margin-bottom: 1rem;
 }
 
 .signup input,
@@ -657,7 +720,7 @@ input[type="submit"] {
 
 .signup h2,
 .login h2 {
-    margin-top: 9rem;
+    margin-top: 3rem;
     margin-left: 3rem;
 }
 
@@ -671,36 +734,4 @@ input[type="submit"] {
 .login-form input {
     margin-right: 40rem;
     flex: 1;
-}
-
-.opciones-sesion {
-    text-align: right;
-    border: 1px solid gray;
-    border-radius: 0.5rem;
-    padding: 1rem;
-    float: right;
-    margin-right: 3rem;
-    margin-top: 3rem;
-}
-
-.opciones-sesion:hover {
-
-}
-
-.opciones-sesion a {
-   border-right: 1px solid black;
-   padding-right: 1rem;
-   margin-right: 1rem;
-}
-
-.opciones-sesion a:last-child {
-    border-right: none;
-    margin-right: 0;
-}
-
-@media (max-width: 500px) {
-
-    .opciones-sesion a {
-        font-size: 0.7rem;
-    }
 }

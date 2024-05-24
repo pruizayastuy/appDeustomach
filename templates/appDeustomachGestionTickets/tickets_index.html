@@ -18,7 +18,7 @@
                 {% for ticket in tickets %}
                     <div class="box-tickets-item">
                         <a href="{% url 'tickets_show' ticket.id %}">
-                            {{ ticket.numero_referencia }} {{ ticket.titulo }}
+                            {{ ticket.numero_referencia }} {{ ticket.titulo }} {{ ticket.estado_ticket }}
                         </a>
                     </div>
                 {% endfor %}

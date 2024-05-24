@@ -17,7 +17,7 @@
                 {% for empleado in empleados %}
                     <div class="box-empleados-item">
                         <a href="{% url 'empleados_show' empleado.pk %}">
-                            {{ empleado.dni }} {{ empleado.nombre }}
+                            {{ empleado.dni }} {{ empleado.nombre }} {{ empleado.apellidos }}
                         </a>
                     </div>
                 {% endfor %}

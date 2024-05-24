@@ -7,8 +7,8 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.contrib.auth import authenticate, login, logout
 
-from appDeustomachGestion.models import Empleado, Equipo, Ticket
-from appDeustomachGestion.forms import EmpleadoForm, EquipoForm, TicketForm, SignupForm, LoginForm
+from .models import Empleado, Equipo, Ticket
+from .forms import EmpleadoForm, EquipoForm, TicketForm, SignupForm, LoginForm
 
 
 # Vistas de empleados

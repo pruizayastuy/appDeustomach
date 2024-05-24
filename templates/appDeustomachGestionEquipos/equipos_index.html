@@ -3,14 +3,16 @@
     <main class="equipos-index">
         <link rel="stylesheet" href="../../static/css/style.css">
         <h2>Listado de equipos</h2>
-        <form METHOD="POST">
-            {% csrf_token %}
-            <div>
-                <input type="text" placeholder="Buscar..." name="buscar" value="{{ request.POST.buscar }}" >
-                <button type="submit">
-                </button>
-            </div>
-        </form>
+        <div class="box-busqueda">
+            <form  METHOD="POST">
+                {% csrf_token %}
+                <div class="busqueda">
+                    <input type="text" name="buscar" value="{{ request.POST.buscar }}" >
+                    <button type="submit"> Buscar
+                    </button>
+                </div>
+            </form>
+        </div>
         <div class="equipos-grid">
             {% if equipos %}
                 {% for equipo in equipos %}
