@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 {% block contenido %}
-    <main class="equipos-menu">
+    <main class="menu">
         <link rel="stylesheet" href="../../static/css/style.css">
         <h2>Gestión de equipos</h2>
         <section class="gestion-tickets">
-            <div class="box-equipos-create">
+            <div class="box-create">
                 <a href="{% url 'equipos_create' %}">Crear equipos</a>
             </div>
             <h2>Listado de equipos</h2>
@@ -18,21 +18,23 @@
                     </div>
                 </form>
             </div>
-            <div class="equipos-grid">
+            <div class="grid">
                 {% if equipos %}
                     {% for equipo in equipos %}
-                        <div class="box-equipos-item">
+                        <div class="box-item">
                             <a href="{% url 'equipos_show' equipo.id %}">
                                 {{ equipo.numero_serie }} {{ equipo.modelo }}
                             </a>
-                            <div class="box-tickets-update">
-                                <a href="{% url 'equipos_update' pk=equipo.pk %}">Actualizar equipo</a>
-                            </div>
-                            <div class="eliminar">
-                                <form method="post" action="{% url 'equipos_delete' pk=equipo.pk %}" style="display:inline;">
-                                    {% csrf_token %}
-                                    <button type="submit" onclick="return confirm('¿Estás seguro de que deseas eliminar este equipo?');">Eliminar</button>
-                                </form>
+                            <div class="box">
+                                <div class="box-update">
+                                    <a href="{% url 'equipos_update' pk=equipo.pk %}">Actualizar equipo</a>
+                                </div>
+                                <div class="box-eliminar">
+                                    <form method="post" action="{% url 'equipos_delete' pk=equipo.pk %}" style="display:inline;">
+                                        {% csrf_token %}
+                                        <a type="submit" onclick="return confirm('¿Estás seguro de que deseas eliminar este equipo?');">Eliminar</a>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     {% endfor %}

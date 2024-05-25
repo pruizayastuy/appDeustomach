@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 {% block contenido %}
-    <main class="empleados-menu">
+    <main class="menu">
     <h2>Gestión de empleados</h2>
         <section class="gestion-tickets">
-            <div class="box-empleados-create">
+            <div class="box-create">
                 <a href="{% url 'empleados_create' %}">Crear empleados</a>
             </div>
             <h2>Listado de empleados</h2>
@@ -18,21 +18,23 @@
                     </div>
                 </form>
             </div>
-            <div class="empleados-grid">
+            <div class="grid">
                 {% if empleados %}
                     {% for empleado in empleados %}
-                        <div class="box-empleados-item">
+                        <div class="box-item">
                             <a href="{% url 'empleados_show' empleado.pk %}">
                                 {{ empleado.dni }} {{ empleado.nombre }} {{ empleado.apellidos }}
                             </a>
-                            <div class="box-tickets-update">
-                                <a href="{% url 'empleados_update' pk=empleado.pk %}">Actualizar empleado</a>
-                            </div>
-                            <div class="eliminar">
-                                <form method="post" action="{% url 'empleados_delete' pk=empleado.pk %}" style="display:inline;">
-                                    {% csrf_token %}
-                                    <button type="submit" onclick="return confirm('¿Estás seguro de que deseas eliminar este empleado?');">Eliminar</button>
-                                </form>
+                            <div class="box">
+                                <div class="box-update">
+                                    <a href="{% url 'empleados_update' pk=empleado.pk %}">Actualizar empleado</a>
+                                </div>
+                                <div class="box-eliminar">
+                                    <form method="post" action="{% url 'empleados_delete' pk=empleado.pk %}" style="display:inline;">
+                                        {% csrf_token %}
+                                        <a type="submit" onclick="return confirm('¿Estás seguro de que deseas eliminar este empleado?');">Eliminar</a>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     {% endfor %}

@@ -1,34 +1,37 @@
 {% extends 'base.html' %}
 {% block contenido %}
-    <main class="empleados-detail">
+    <main class="detail">
         <h2>Detalle del empleado</h2>
-        <div class="box-empleados-detail">
+        <div class="box-detail">
             {% if empleado %}
-                <a class="empleado-label">DNI</a>
-                <a class="empleado-content">{{ empleado.dni }}</a>
-                <a class="empleado-label">Nombre</a>
-                <a class="empleado-content">{{ empleado.nombre }}</a>
-                <a class="empleado-label">Apellidos</a>
-                <a class="empleado-content">{{ empleado.apellidos }}</a>
-                <a class="empleado-label">Email</a>
-                <a class="empleado-content">{{ empleado.email }}</a>
-                <a class="empleado-label">Teléfono</a>
-                <a class="empleado-content">{{ empleado.telefono }}</a>
+                <a class="label">DNI</a>
+                <a class="content">{{ empleado.dni }}</a>
+                <a class="label">Nombre</a>
+                <a class="content">{{ empleado.nombre }}</a>
+                <a class="label">Apellidos</a>
+                <a class="content">{{ empleado.apellidos }}</a>
+                <a class="label">Email</a>
+                <a class="content">{{ empleado.email }}</a>
+                <a class="label">Teléfono</a>
+                <a class="content">{{ empleado.telefono }}</a>
             {% else %}
                 <p>No existe este empleado.</p>
             {% endif %}
-        </div>
-        <div class="box-tickets-update">
-            <a href="{% url 'empleados_update' pk=empleado.pk %}">Actualizar empleado</a>
-            <div class="salir">
-                <a href="{% url 'empleados_menu' %}">Atras</a>
+            <div class="orden">
+                <div class="box-update detalle">
+                    <a href="{% url 'empleados_update' pk=empleado.pk %}">Actualizar empleado</a>
+                </div>
+                <div class="eliminar">
+                    <form method="post" action="{% url 'empleados_delete' pk=empleado.pk %}" style="display:inline;">
+                        {% csrf_token %}
+                        <button type="submit" onclick="return confirm('¿Estás seguro de que deseas eliminar este empleado?');">Eliminar</button>
+                    </form>
+                </div>
             </div>
         </div>
-       <div class="eliminar">
-           <form method="post" action="{% url 'empleados_delete' pk=empleado.pk %}" style="display:inline;">
-               {% csrf_token %}
-               <button type="submit" onclick="return confirm('¿Estás seguro de que deseas eliminar este empleado?');">Eliminar</button>
-           </form>
-       </div>
+        <div class="salir">
+            <a href="{% url 'empleados_menu' %}">Atras</a>
+        </div>
+
     </main>
 {% endblock %}

@@ -5,8 +5,6 @@ html{
    box-sizing: border-box;
 }
 h1{
-
-
    font-family: "Bebas Nenue",sans-serif;
 }
 a, h2, h3, p{
@@ -17,7 +15,6 @@ a, h2, h3, p{
 
 
 /*Header*/
-
 
 .header-web{
     justify-content: space-between;
@@ -32,16 +29,19 @@ a, h2, h3, p{
    font-size: 1.2rem;
 }
 .header h1, h3 {
-    display: inline;
-    margin-right: 2rem;
+    display: inline-flex;
+    justify-content: space-between;
+    margin-right: 1.5rem;
 }
-.nombre-web{
-   color: white;
-   margin-bottom: 0;
+.nombre-web a{
+    font-family: "Bebas Nenue",sans-serif;
+    color: white;
+    margin-bottom: 0;
 }
-.subtitulo-web{
-   margin-top: 1rem;
-   color: white;
+.subtitulo-web a{
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    color: white;
 }
 
 .opciones-sesion {
@@ -50,6 +50,7 @@ a, h2, h3, p{
      padding: 1rem;
      margin-right: 3rem;
      flex-wrap: wrap;
+    margin-top: 1rem;
 }
 
 .opciones-sesion a {
@@ -219,35 +220,13 @@ a, h2, h3, p{
 
 
 /* Fuentes área de gestión */
-
-h1, h2 {
-   font-family: "Bebas Neue", sans-serif;
-}
-
-
-a, h2, p {
-   font-family: "Raleway", sans-serif;
-   text-decoration: none;
-}
-
-
-.tickets-menu a,
-.tickets-index a,
-.empleados-menu a,
-.empleados-index a,
-.equipos-menu a,
-.equipos-index a
-{
+.menu a{
    margin-left: 2rem;
    color: white;
    font-weight: bold;
 }
-
-
-.empleados-index p,
-.equipos-index p,
-.tickets-index p {
-   margin-left: 3rem;
+.menu a:hover{
+   color: darkgray;
 }
 
 
@@ -259,28 +238,12 @@ a, h2, p {
 }
 
 
-.tickets-menu a:hover,
-.tickets-index a:hover,
-.empleados-menu a:hover,
-.empleados-index a:hover,
-.equipos-menu a:hover,
-.equipos-index a:hover{
-   color: #f5f5f5;
-}
 
 
-.tickets-menu h2,
-.tickets-index h2,
-.tickets-detail h2,
+.menu h2,
+.detail h2,
 .tickets-update h2,
-.empleados-menu h2,
-.empleados-index h2,
-.equipos-menu h2,
-.equipos-index h2,
-.equipos-detail h2,
-.equipos-delete h2,
-.empleados-detail h2
-{
+.equipos-delete h2 {
    margin-top: 3rem;
    margin-left: 3rem;
 }
@@ -326,26 +289,30 @@ a, h2, p {
    color: white;
 }
 
-.box-tickets-update a {
-   color: white;
-   font-weight: bold;
+.orden{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+.orden a {
+    color: black;
+    background-color: #ffffff;
+    font-weight: bold;
+    border: 2px solid #ffffff;
+    border-radius: 3px;
+    min-width: 9rem;
+    align-items: center;
+}
+.eliminar button{
+    margin-top: 1rem;
 }
 
-.box-tickets-update a:hover {
-   color: #f5f5f5;
 
-}
 
 /* Divs generales de apartados */
 
 
-.box-tickets-index,
-.box-tickets-create,
-.box-equipos-index,
-.box-equipos-create,
-.box-equipos-delete,
-.box-empleados-index,
-.box-empleados-create
+.box-create
 {
    padding: 2rem;
    margin-left: 4rem;
@@ -354,8 +321,7 @@ a, h2, p {
    background-color: #7288c4;
 }
 
-.box-tickets-create,
-.box-empleados-create {
+.box-create {
     margin-bottom: 3rem;
 }
 
@@ -363,84 +329,65 @@ a, h2, p {
 @media (max-width: 700px) {
 
 
-.box-tickets-index,
-.box-tickets-create,
-.box-equipos-index,
-.box-equipos-create,
-.box-equipos-delete,
-.box-empleados-index,
-.box-empleados-create {
-       margin-right: 4rem;
-   }
-
-
+    .box-create,
+    .box-equipos-delete {
+        margin-right: 4rem;
+    }
 }
 
 
-.box-equipos-delete {
+.box-delete {
    margin-bottom: 3rem;
-}
-
-
-.box-tickets-update {
-   margin-bottom: 3rem;
-   margin-right: 30rem;
-}
-
-.box-tickets-item,
-.box-equipos-item,
-.box-empleados-item
-{
-   padding: 2rem;
-   margin-left: 4rem;
-   margin-right: 24rem;
-   margin-top: 1rem;
-   background-color: #7288c4;
 }
 
 
 /* Grids de listas */
 
 
-.tickets-grid, .equipos-grid, .empleados-grid {
+.grid {
    display: grid;
    grid-template-columns: repeat(2, 1fr);
 }
 
 
 @media screen and (max-width: 950px) {
-   .tickets-grid, .equipos-grid, .empleados-grid {
+   .grid {
        margin-top: 3rem;
        display: block;
    }
 }
 
-
-.box-tickets-item, .box-equipos-item, .box-empleados-item {
-   background-color: #7288c4;
-   padding: 2rem;
-   margin-right: 4rem;
-   margin-left: 3rem;
+.box-item {
+    background-color: #7288c4;
+    padding: 2rem;
+    margin: 1rem 3rem;
+}
+.box-update a{
+    margin-left: 0;
+}
+.detalle a:hover{
+    background-color: #b4b4b4;
+    border: 1px solid #b0b0b0;
+}
+.box-eliminar{
+    margin-left: 3rem;
 }
 
-
-.tickets-index,
-.empleados-index,
-.equipos-index
-{
-   margin-bottom: 4rem;
+.box{
+    display: flex;
+    padding-top: 4rem;
+    padding-left: 11rem;
 }
+
 
 
 /* Detalle de cada campo */
 
 
-.ticket-label,
+.label,
 .ticket-label-2,
 .ticket-label-3,
-.ticket-label-4,
-.equipo-label,
-.empleado-label {
+.ticket-label-4{
    font-size: 1.20rem;
    font-weight: bold;
    color: white;
@@ -461,41 +408,21 @@ a, h2, p {
 }
 
 
-.ticket-content,
-.equipo-content,
-.empleado-content {
-   margin-bottom: 1.5rem;
-}
-
-
-.ticket-content-2 {
-   margin-bottom: 4rem;
-}
-
-
-.box-tickets-detail a,
-.box-equipos-detail a,
-.box-empleados-detail a {
+.box-detail a {
     display: block;
     margin-top: 1rem;
 }
 
 
-.box-tickets-detail,
-.box-equipos-detail,
-.box-empleados-detail,
-.box-tickets-update {
+.box-detail{
    background-color: #7288c4;
    padding: 2rem;
-   margin: 2rem 30rem 5rem 4rem;
+   margin: 2rem 3rem 5rem 4rem;
 }
 
 
 @media (max-width: 900px) {
-   .box-tickets-detail,
-   .box-equipos-detail,
-   .box-empleados-detail,
-   .box-tickets-update {
+   .box-detail {
        background-color: #7288c4;
        padding: 2rem;
        margin: 2rem 2rem 5rem 2rem;
@@ -511,7 +438,9 @@ a, h2, p {
 .empleados-create {
    padding: 2rem;
 }
-
+.caja-update{
+    margin-left: 3rem;
+}
 
 .form-grid {
    display: grid;
@@ -660,6 +589,15 @@ input[type="submit"] {
 
 input[type="submit"] {
    margin-top: 2rem;
+}
+
+.salir{
+    margin-left: 5rem;
+}
+.salir a{
+    color: black;
+    border: 1px solid gray;
+    border-radius: 3px;
 }
 
 /* Inicio de sesión, registro y cierre de sesión */

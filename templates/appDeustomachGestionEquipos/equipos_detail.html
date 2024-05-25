@@ -1,39 +1,45 @@
 {% extends 'base.html' %}
 {% block contenido %}
-    <main class="equipos-detail">
+    <main class="detail">
         <h2>Detalle del equipo</h2>
-        <div class="box-equipos-detail">
+        <div class="box-detail">
             {% if equipo %}
-                <a class="equipo-label">Número de serie</a>
-                <a class="equipo-content">{{ equipo.numero_serie }}</a>
-                <a class="equipo-label">Modelo</a>
-                <a class="equipo-content">{{ equipo.modelo }}</a>
-                <a class="equipo-label">Marca</a>
-                <a class="equipo-content">{{ equipo.marca }}</a>
-                <a class="equipo-label">Tipo de equipo</a>
-                <a class="equipo-content">{{ equipo.tipo_equipo }}</a>
-                <a class="equipo-label">Fecha de adquisición</a>
-                <a class="equipo-content">{{ equipo.fecha_adquisicion }}</a>
-                <a class="equipo-label">Fecha de puesta en marcha</a>
-                <a class="equipo-content">{{ equipo.fecha_puesta_marcha }}</a>
-                <a class="equipo-label">Nombre del proveedor</a>
-                <a class="equipo-content">{{ equipo.informacion_proveedor.nombre }}</a>
-                <a class="equipo-label">Teléfono del proveedor</a>
-                <a class="equipo-content">{{ equipo.informacion_proveedor.telefono }}</a>
-                <a class="equipo-label">Planta del equipo</a>
-                <a class="equipo-content">{{ equipo.planta }}</a>
+                <a class="label">Número de serie</a>
+                <a class="content">{{ equipo.numero_serie }}</a>
+                <a class="label">Modelo</a>
+                <a class="content">{{ equipo.modelo }}</a>
+                <a class="label">Marca</a>
+                <a class="content">{{ equipo.marca }}</a>
+                <a class="label">Tipo de equipo</a>
+                <a class="content">{{ equipo.tipo_equipo }}</a>
+                <a class="label">Fecha de adquisición</a>
+                <a class="content">{{ equipo.fecha_adquisicion }}</a>
+                <a class="label">Fecha de puesta en marcha</a>
+                <a class="content">{{ equipo.fecha_puesta_marcha }}</a>
+                <a class="label">Nombre del proveedor</a>
+                <a class="content">{{ equipo.informacion_proveedor.nombre }}</a>
+                <a class="label">Teléfono del proveedor</a>
+                <a class="content">{{ equipo.informacion_proveedor.telefono }}</a>
+                <a class="label">Planta del equipo</a>
+                <a class="content">{{ equipo.planta }}</a>
             {% else %}
                 <p>No existe este equipo.</p>
             {% endif %}
+            <div class="orden">
+                <div class="box-update detalle">
+                        <a href="{% url 'equipos_update' pk=equipo.pk %}">Actualizar equipo</a>
+                </div>
+                <div class="eliminar">
+                    <form method="post" action="{% url 'equipos_delete' pk=equipo.pk %}" style="display:inline;">
+                        {% csrf_token %}
+                        <button type="submit" onclick="return confirm('¿Estás seguro de que deseas eliminar este equipo?');">Eliminar</button>
+                    </form>
+                </div>
+            </div>
         </div>
         <div class="salir">
             <a href="{% url 'equipos_menu' %}">Atras</a>
         </div>
-       <div class="eliminar">
-           <form method="post" action="{% url 'equipos_delete' pk=equipo.pk %}" style="display:inline;">
-               {% csrf_token %}
-               <button type="submit" onclick="return confirm('¿Estás seguro de que deseas eliminar este equipo?');">Eliminar</button>
-           </form>
-       </div>
+
     </main>
 {% endblock %}

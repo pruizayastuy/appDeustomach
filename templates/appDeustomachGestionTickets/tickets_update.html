@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block contenido %}
-   <main class="tickets-update">
+   <main class="caja-update">
        <h2>Actualizar tickets</h2>
        <form class="ticket-form" method="post">
            {% csrf_token %}
@@ -12,7 +12,7 @@
                <a href="{% url 'tickets_menu' %}">Cancelar</a>
            </div>
        </form>
-       <div class="eliminar">
+       <div class="box-eliminar">
            <form method="post" action="{% url 'tickets_delete' pk=ticket.pk %}" style="display:inline;">
                {% csrf_token %}
                <button type="submit" onclick="return confirm('¿Estás seguro de que deseas eliminar este ticket?');">Eliminar</button>
