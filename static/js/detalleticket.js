@@ -1,5 +1,5 @@
-function mostrarDetalles(ticketId) {
-    fetch(`/api/tickets/${ticketId}/`)
+function mostrarDetalles(ticketId, detallesDivId) {
+    fetch(`/appDeustomachGestion/api/tickets/${ticketId}/`)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok ' + response.statusText);
@@ -7,7 +7,7 @@ function mostrarDetalles(ticketId) {
             return response.json();
         })
         .then(data => {
-            const detallesDiv = document.getElementById('ticket-detalles');
+            const detallesDiv = document.getElementById(detallesDivId);
             detallesDiv.innerHTML = `
                 <h3>Detalles del Ticket</h3>
                 <p><strong>Referencia:</strong> ${data.numero_referencia}</p>

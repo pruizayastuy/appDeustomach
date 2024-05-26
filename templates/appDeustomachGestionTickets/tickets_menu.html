@@ -21,7 +21,7 @@
             {% if tickets %}
                 {% for ticket in tickets %}
                     <div class="box-item">
-                        <a href="javascript:void(0);" onclick="mostrarDetalles({{ ticket.id }});">
+                        <a href="javascript:void(0);" onclick="mostrarDetalles({{ ticket.id }}, 'ticket-detalles-{{ ticket.id }}');">
                             {{ ticket.numero_referencia }} {{ ticket.titulo }} {{ ticket.estado_ticket }}
                         </a>
                         <div class="box">
@@ -35,14 +35,12 @@
                                 </form>
                             </div>
                         </div>
+                        <div id="ticket-detalles-{{ ticket.id }}" class="ticket-detalles"></div>
                     </div>
                 {% endfor %}
             {% else %}
                 <p>No hay tickets creados.</p>
             {% endif %}
-        </div>
-        <div id="ticket-detalles" class="ticket-detalles">
-
         </div>
     </section>
 </main>

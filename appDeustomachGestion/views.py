@@ -217,6 +217,7 @@ class TicketDetailAPI(View):
         }
         return JsonResponse(data)
 
+
 class TicketListView(ListView):
     model = Ticket
     template_name = "appDeustomachGestionTickets/tickets_menu.html"
