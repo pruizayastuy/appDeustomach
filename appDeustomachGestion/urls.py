@@ -19,7 +19,7 @@ from .views import (EmpleadoListView, EmpleadoDetailView, EmpleadoCreateView, Me
                     EmpleadoUpdateView, EmpleadoDeleteView, EquipoListView, EquipoDetailView, EquipoCreateView,
                     MenuEquiposView, EquipoUpdateView, EquipoDeleteView, listar_equipos, TicketListView,
                     TicketDetailView, TicketCreateView, MenuTicketsView, TicketUpdateView, TicketDeleteView,
-                    listar_tickets, SignupView, LoginView, LogoutView, MenuPrincipalView, )
+                    listar_tickets, SignupView, LoginView, LogoutView, MenuPrincipalView, TicketDetailAPI, )
 
 urlpatterns = [
 
@@ -61,5 +61,8 @@ urlpatterns = [
 
     path('signup', SignupView.as_view(), name='signup'),
     path('login', LoginView.as_view(), name='login'),
-    path('logout', LogoutView.as_view(), name='logout')
+    path('logout', LogoutView.as_view(), name='logout'),
+
+    # urls api
+    path('api/tickets/<int:pk>/', TicketDetailAPI.as_view(), name='ticket_detail_api')
 ]

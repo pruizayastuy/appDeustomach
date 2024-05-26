@@ -1,46 +1,50 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block contenido %}
-   <main class="menu">
-       <h2>Gestión de tickets</h2>
-       <section class="gestion-tickets">
-           <div class="box-create">
-               <a href="{% url 'tickets_create' %}">Crear tickets</a>
-           </div>
-           <h2>Listado de tickets</h2>
-           <div class="box-busqueda">
-                <form  METHOD="POST">
-                    {% csrf_token %}
-                    <div class="busqueda">
-                        <input type="text" placeholder="Buscar..." name="buscar" value="{{ request.POST.buscar }}" >
-                        <button type="submit"> Buscar
-                        </button>
-                    </div>
-                </form>
-            </div>
-           <div class="grid">
-               {% if tickets %}
-                    {% for ticket in tickets %}
-                        <div class="box-item">
-                            <a href="{% url 'tickets_show' ticket.id %}">
-                                {{ ticket.numero_referencia }} {{ ticket.titulo }} {{ ticket.estado_ticket }}
-                            </a>
-                            <div class="box">
-                                <div class="box-update">
-                                    <a href="{% url 'tickets_update' pk=ticket.pk %}">Actualizar ticket</a>
-                                </div>
-                                <div class="box-eliminar">
-                                    <form method="post" action="{% url 'tickets_delete' pk=ticket.pk %}" style="display:inline;">
-                                        {% csrf_token %}
-                                        <a type="submit" onclick="return confirm('¿Estás seguro de que deseas eliminar este ticket?');">Eliminar</a>
-                                    </form>
-                                </div>
+<main class="menu">
+    <h2>Gestión de tickets</h2>
+    <section class="gestion-tickets">
+        <div class="box-create">
+            <a href="{% url 'tickets_create' %}">Crear tickets</a>
+        </div>
+        <h2>Listado de tickets</h2>
+        <div class="box-busqueda">
+            <form method="post">
+                {% csrf_token %}
+                <div class="busqueda">
+                    <input type="text" placeholder="Buscar..." name="buscar" value="{{ request.POST.buscar }}">
+                    <button type="submit">Buscar</button>
+                </div>
+            </form>
+        </div>
+        <div class="grid">
+            {% if tickets %}
+                {% for ticket in tickets %}
+                    <div class="box-item">
+                        <a href="javascript:void(0);" onclick="mostrarDetalles({{ ticket.id }});">
+                            {{ ticket.numero_referencia }} {{ ticket.titulo }} {{ ticket.estado_ticket }}
+                        </a>
+                        <div class="box">
+                            <div class="box-update">
+                                <a href="{% url 'tickets_update' pk=ticket.pk %}">Actualizar ticket</a>
+                            </div>
+                            <div class="box-eliminar">
+                                <form method="post" action="{% url 'tickets_delete' pk=ticket.pk %}" style="display:inline;">
+                                    {% csrf_token %}
+                                    <a type="submit" onclick="return confirm('¿Estás seguro de que deseas eliminar este ticket?');">Eliminar</a>
+                                </form>
                             </div>
                         </div>
-                   {% endfor %}
-               {% else %}
-                     <p>No hay tickets creados.</p>
-                {% endif %}
-           </div>
-       </section>
-   </main>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>No hay tickets creados.</p>
+            {% endif %}
+        </div>
+        <div id="ticket-detalles" class="ticket-detalles">
+
+        </div>
+    </section>
+</main>
+<script src="{% static 'js/detalleticket.js' %}"></script>
 {% endblock %}

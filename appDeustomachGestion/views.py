@@ -3,9 +3,9 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.db.models import Q
 from django.utils.decorators import method_decorator
 from django.views.generic import ListView, DetailView, View
-from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.contrib.auth import authenticate, login, logout
+from django.http import JsonResponse
 
 from .models import Empleado, Equipo, Ticket
 from .forms import EmpleadoForm, EquipoForm, TicketForm, SignupForm, LoginForm
@@ -203,6 +203,19 @@ def listar_tickets(request):
 
     return render(request, "appDeustomachGestionTickets/tickets_menu.html", {"tickets": tickets})
 
+
+class TicketDetailAPI(View):
+    def get(self, request, pk):
+        ticket = get_object_or_404(Ticket, pk=pk)
+        data = {
+            'numero_referencia': ticket.numero_referencia,
+            'titulo': ticket.titulo,
+            'descripcion_detallada': ticket.descripcion_detallada,
+            'estado_ticket': ticket.estado_ticket,
+            'fecha_apertura': ticket.fecha_apertura,
+            'nivel_urgencia': ticket.nivel_urgencia,
+        }
+        return JsonResponse(data)
 
 class TicketListView(ListView):
     model = Ticket
