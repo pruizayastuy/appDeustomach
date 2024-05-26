@@ -1,20 +1,21 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block contenido %}
     <main class="menu">
-    <h2>Gestión de empleados</h2>
+        <h2>Gestión de empleados</h2>
         <section class="gestion-tickets">
             <div class="box-create">
                 <a href="{% url 'empleados_create' %}">Crear empleados</a>
             </div>
             <h2>Listado de empleados</h2>
             <div class="box-busqueda">
-                <form METHOD="POST">
+                <form method="POST">
                     {% csrf_token %}
                     <div class="busqueda">
-                        <input type="text" placeholder="Buscar..." name="buscar" value="{{ request.POST.buscar }}" >
-                        <button type="submit">
-                            Buscar
-                        </button>
+                        <label>
+                            <input type="text" placeholder="Buscar..." name="buscar" value="{{ request.POST.buscar }}">
+                        </label>
+                        <button type="submit">Buscar</button>
                     </div>
                 </form>
             </div>
@@ -22,7 +23,7 @@
                 {% if empleados %}
                     {% for empleado in empleados %}
                         <div class="box-item">
-                            <a href="{% url 'empleados_show' empleado.pk %}">
+                            <a href="javascript:void(0);" onclick="mostrarDetallesEmpleado({{ empleado.id }}, 'empleado-detalles-{{ empleado.id }}');">
                                 {{ empleado.dni }} {{ empleado.nombre }} {{ empleado.apellidos }}
                             </a>
                             <div class="box">
@@ -36,6 +37,7 @@
                                     </form>
                                 </div>
                             </div>
+                            <div id="empleado-detalles-{{ empleado.id }}" class="empleado-detalles"></div>
                         </div>
                     {% endfor %}
                 {% else %}
@@ -44,4 +46,5 @@
             </div>
         </section>
     </main>
+    <script src="{% static 'js/detalleempleado.js' %}"></script>
 {% endblock %}

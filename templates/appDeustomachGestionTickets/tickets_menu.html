@@ -12,7 +12,9 @@
             <form method="post">
                 {% csrf_token %}
                 <div class="busqueda">
-                    <input type="text" placeholder="Buscar..." name="buscar" value="{{ request.POST.buscar }}">
+                    <label>
+                        <input type="text" placeholder="Buscar..." name="buscar" value="{{ request.POST.buscar }}">
+                    </label>
                     <button type="submit">Buscar</button>
                 </div>
             </form>
@@ -21,7 +23,7 @@
             {% if tickets %}
                 {% for ticket in tickets %}
                     <div class="box-item">
-                        <a href="javascript:void(0);" onclick="mostrarDetalles({{ ticket.id }}, 'ticket-detalles-{{ ticket.id }}');">
+                        <a href="javascript:void(0);" onclick="mostrarDetallesTicket({{ ticket.id }}, 'ticket-detalles-{{ ticket.id }}');">
                             {{ ticket.numero_referencia }} {{ ticket.titulo }} {{ ticket.estado_ticket }}
                         </a>
                         <div class="box">

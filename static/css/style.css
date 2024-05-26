@@ -421,6 +421,18 @@ a, h2, h3, p{
 /* Detalle de cada campo */
 
 
+.ticket-detalles,
+.empleado-detalles,
+.equipo-detalles {
+    margin-top: 2rem;
+}
+
+.ticket-detalles p, h3,
+.empleado-detalles p, h3,
+.equipo-detalles p, h3 {
+    color: white;
+}
+
 .label,
 .ticket-label-2,
 .ticket-label-3,

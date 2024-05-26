@@ -15,11 +15,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls')
 """
 from django.urls import path
-from .views import (EmpleadoListView, EmpleadoDetailView, EmpleadoCreateView, MenuEmpleadosView, listar_empleados,
-                    EmpleadoUpdateView, EmpleadoDeleteView, EquipoListView, EquipoDetailView, EquipoCreateView,
-                    MenuEquiposView, EquipoUpdateView, EquipoDeleteView, listar_equipos, TicketListView,
-                    TicketDetailView, TicketCreateView, MenuTicketsView, TicketUpdateView, TicketDeleteView,
-                    listar_tickets, SignupView, LoginView, LogoutView, MenuPrincipalView, TicketDetailAPI, )
+from .views import (EmpleadoListView, EmpleadoCreateView, MenuEmpleadosView, listar_empleados, EmpleadoUpdateView,
+                    EmpleadoDeleteView, EquipoListView, EquipoCreateView, MenuEquiposView, EquipoUpdateView,
+                    EquipoDeleteView, listar_equipos, TicketListView, TicketCreateView, MenuTicketsView,
+                    TicketUpdateView, TicketDeleteView, listar_tickets, SignupView, LoginView, LogoutView,
+                    MenuPrincipalView, TicketDetailAPI, EquipoDetailAPI, EmpleadoDetailAPI, )
 
 urlpatterns = [
 
@@ -30,7 +30,6 @@ urlpatterns = [
     path('empleados-menu', listar_empleados, name='empleados'),
     path('emplados-menu', MenuEmpleadosView.as_view(), name='empleados_menu'),
     path('empleados-menu', EmpleadoListView.as_view(), name='empleados_menu'),
-    path('empleados-show/<int:pk>', EmpleadoDetailView.as_view(), name='empleados_show'),
     path('empleados-create', EmpleadoCreateView.as_view(), name='empleados_create'),
     path('empleados-update/<int:pk>', EmpleadoUpdateView.as_view(), name='empleados_update'),
     path('empleados-delete/<int:pk>', EmpleadoDeleteView.as_view(), name='empleados_delete'),
@@ -40,7 +39,6 @@ urlpatterns = [
     path('equipos-menu', listar_equipos, name='equipos'),
     path('equipos-menu', MenuEquiposView.as_view(), name='equipos_menu'),
     path('equipos-menu', EquipoListView.as_view(), name='equipos_menu'),
-    path('equipos-show/<int:pk>', EquipoDetailView.as_view(), name='equipos_show'),
     path('equipos-create', EquipoCreateView.as_view(), name='equipos_create'),
     path('equipos-delete/<int:pk>', EquipoDeleteView.as_view(), name='equipos_delete'),
     path('equipos-update/<int:pk>', EquipoUpdateView.as_view(), name='equipos_update'),
@@ -51,7 +49,6 @@ urlpatterns = [
     path('tickets-menu', listar_tickets, name='tickets'),
     path('tickets-menu', MenuTicketsView.as_view(), name='tickets_menu'),
     path('tickets-menu', TicketListView.as_view(), name='tickets_menu'),
-    path('tickets-show/<int:pk>', TicketDetailView.as_view(), name='tickets_show'),
     path('tickets-create', TicketCreateView.as_view(), name='tickets_create'),
     path('tickets-update/<int:pk>', TicketUpdateView.as_view(), name='tickets_update'),
     path('tickets-delete/<int:pk>', TicketDeleteView.as_view(), name='tickets_delete'),
@@ -63,6 +60,10 @@ urlpatterns = [
     path('login', LoginView.as_view(), name='login'),
     path('logout', LogoutView.as_view(), name='logout'),
 
-    # urls api
-    path('api/tickets/<int:pk>/', TicketDetailAPI.as_view(), name='ticket_detail_api')
+    # urls de API
+
+    path('api/tickets/<int:pk>/', TicketDetailAPI.as_view(), name='ticket_detail_api'),
+    path('api/equipos/<int:pk>/', EquipoDetailAPI.as_view(), name='equipo_detail_api'),
+    path('api/empleados/<int:pk>/', EmpleadoDetailAPI.as_view(), name='empleado_detail_api')
+
 ]

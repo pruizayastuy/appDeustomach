@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block contenido %}
     <main class="menu">
-        <link rel="stylesheet" href="../../static/css/style.css">
         <h2>Gestión de equipos</h2>
         <section class="gestion-tickets">
             <div class="box-create">
@@ -9,12 +9,13 @@
             </div>
             <h2>Listado de equipos</h2>
             <div class="box-busqueda">
-                <form  METHOD="POST">
+                <form method="POST">
                     {% csrf_token %}
                     <div class="busqueda">
-                        <input type="text" name="buscar" value="{{ request.POST.buscar }}" >
-                        <button type="submit"> Buscar
-                        </button>
+                        <label>
+                            <input type="text" name="buscar" placeholder="Buscar..." value="{{ request.POST.buscar }}">
+                        </label>
+                        <button type="submit">Buscar</button>
                     </div>
                 </form>
             </div>
@@ -22,7 +23,7 @@
                 {% if equipos %}
                     {% for equipo in equipos %}
                         <div class="box-item">
-                            <a href="{% url 'equipos_show' equipo.id %}">
+                            <a href="javascript:void(0);" onclick="mostrarDetallesEquipo({{ equipo.id }}, 'equipo-detalles-{{ equipo.id }}');">
                                 {{ equipo.numero_serie }} {{ equipo.modelo }}
                             </a>
                             <div class="box">
@@ -36,6 +37,7 @@
                                     </form>
                                 </div>
                             </div>
+                            <div id="equipo-detalles-{{ equipo.id }}" class="equipo-detalles"></div>
                         </div>
                     {% endfor %}
                 {% else %}
@@ -44,4 +46,5 @@
             </div>
         </section>
     </main>
+    <script src="{% static 'js/detalleequipo.js' %}"></script>
 {% endblock %}
