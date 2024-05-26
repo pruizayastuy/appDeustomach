@@ -19,9 +19,11 @@ from .views import (EmpleadoListView, EmpleadoDetailView, EmpleadoCreateView, Me
                     EmpleadoUpdateView, EmpleadoDeleteView, EquipoListView, EquipoDetailView, EquipoCreateView,
                     MenuEquiposView, EquipoUpdateView, EquipoDeleteView, listar_equipos, TicketListView,
                     TicketDetailView, TicketCreateView, MenuTicketsView, TicketUpdateView, TicketDeleteView,
-                    listar_tickets, SignupView, LoginView, LogoutView, )
+                    listar_tickets, SignupView, LoginView, LogoutView, MenuPrincipalView, )
 
 urlpatterns = [
+
+    path('', MenuPrincipalView.as_view(), name='menu_principal'),
 
     # urls de empleados
 

@@ -8,11 +8,11 @@
                {{ formulario.as_ul }}
            </div>
            <div class="accesos">
-               <input type="submit" value="Actualizar ticket"/>
-               <a href="{% url 'tickets_menu' %}">Cancelar</a>
+               <button type="submit">Actualizar ticket</button>
+               <a class="cancelar" href="{% url 'tickets_menu' %}">Cancelar</a>
            </div>
        </form>
-       <div class="box-eliminar">
+       <div class="eliminar">
            <form method="post" action="{% url 'tickets_delete' pk=ticket.pk %}" style="display:inline;">
                {% csrf_token %}
                <button type="submit" onclick="return confirm('¿Estás seguro de que deseas eliminar este ticket?');">Eliminar</button>

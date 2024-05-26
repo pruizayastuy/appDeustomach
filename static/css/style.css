@@ -225,6 +225,11 @@ a, h2, h3, p{
    color: white;
    font-weight: bold;
 }
+
+.menu p {
+    margin-left: 3rem;
+}
+
 .menu a:hover{
    color: darkgray;
 }
@@ -303,8 +308,20 @@ a, h2, h3, p{
     min-width: 9rem;
     align-items: center;
 }
-.eliminar button{
+
+.eliminar button {
     margin-top: 1rem;
+    font-family: "Raleway", sans-serif;
+    margin-left: 5rem;
+}
+
+@media (max-width: 460px) {
+    .eliminar button {
+        display: block;
+        margin-left: 0;
+        margin-top: 1rem;
+        width: 100%;
+    }
 }
 
 
@@ -362,23 +379,43 @@ a, h2, h3, p{
     padding: 2rem;
     margin: 1rem 3rem;
 }
-.box-update a{
+
+.box-update a {
     margin-left: 0;
-}
-.detalle a:hover{
-    background-color: #b4b4b4;
-    border: 1px solid #b0b0b0;
-}
-.box-eliminar{
-    margin-left: 3rem;
+    font-weight: bold;
+    padding: 1px 16px;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    display: inline-block;
 }
 
-.box{
+.detalle a:hover{
+    border: 1px solid #b0b0b0;
+    background-color: #f1f1f1;
+
+}
+
+.box-eliminar{
+    margin-left: 1rem;
+}
+
+.box {
     display: flex;
     padding-top: 4rem;
     padding-left: 11rem;
 }
 
+@media (max-width: 650px) {
+    .box {
+        font-weight: normal;
+        font-size: 0.7rem;
+        padding-left: 0;
+        padding-top: 2rem;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 0;
+    }
+}
 
 
 /* Detalle de cada campo */
@@ -439,6 +476,10 @@ a, h2, h3, p{
    padding: 2rem;
 }
 .caja-update{
+    margin-top: 3rem;
+}
+
+.caja-update h2 {
     margin-left: 3rem;
 }
 
@@ -455,6 +496,14 @@ a, h2, h3, p{
    }
 }
 
+.accesos {
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.cancelar {
+    margin-left: 2rem;
+}
 
 .form-grid li {
    list-style: none;
@@ -593,11 +642,16 @@ input[type="submit"] {
 
 .salir{
     margin-left: 5rem;
+    margin-bottom: 3rem;
 }
-.salir a{
+
+.salir a {
     color: black;
+    background-color: #f4f4f4;
     border: 1px solid gray;
     border-radius: 3px;
+    padding: 2px 15px;
+    width: auto;
 }
 
 /* Inicio de sesión, registro y cierre de sesión */

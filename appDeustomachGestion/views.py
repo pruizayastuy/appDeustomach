@@ -11,6 +11,13 @@ from .models import Empleado, Equipo, Ticket
 from .forms import EmpleadoForm, EquipoForm, TicketForm, SignupForm, LoginForm
 
 
+# Vista general
+
+class MenuPrincipalView(View):
+    def get(self, request):
+        return render(request, "base.html")
+
+
 # Vistas de empleados
 
 @method_decorator(login_required(login_url='/appDeustomachGestion/login'), name='dispatch')
@@ -56,6 +63,7 @@ class EmpleadoCreateView(View):
             return redirect('empleados_menu')
         return render(request, 'appDeustomachGestionEmpleados/empleados_create.html', {'formulario': formulario})
 
+
 class EmpleadoUpdateView(View):
     def get(self, request, pk):
         empleado = Empleado.objects.get(pk=pk)
@@ -78,6 +86,7 @@ class EmpleadoUpdateView(View):
 
         return render(request, 'appDeustomachGestionEmpleados/empleados_update.html', context)
 
+
 class EmpleadoDeleteView(View):
     def get(self, request):
         empleado_id = request.POST.get('empleado_id')
@@ -88,6 +97,8 @@ class EmpleadoDeleteView(View):
         empleado = get_object_or_404(Empleado, pk=pk)
         empleado.delete()
         return redirect('empleados_menu')
+
+
 # Vistas de equipos
 
 @method_decorator(login_required(login_url='/appDeustomachGestion/login'), name='dispatch')
@@ -136,8 +147,8 @@ class EquipoCreateView(View):
             return render(request, 'appDeustomachGestionEquipos/equipos_create.html', context)
 
 
+#  Actualizar Equipo
 
-#Actualizar Equipo
 class EquipoUpdateView(View):
     def get(self, request, pk):
         equipo = Equipo.objects.get(pk=pk)
